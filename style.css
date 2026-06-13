@@ -554,9 +554,43 @@ section {
     font-size: 1rem;
     font-weight: 300;
     color: var(--text-secondary);
-    max-width: 500px;
-    margin-bottom: 30px;
+    max-width: 520px;
+    margin-bottom: 20px;
+    line-height: 1.65;
 }
+
+/* Quick-scan highlight chips under bio */
+.hero-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+    max-width: 520px;
+}
+
+.hero-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--card-border);
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: var(--transition-smooth);
+}
+
+.hero-chip i {
+    font-size: 0.72rem;
+    color: var(--accent-cyan);
+}
+
+.hero-chip.gold i  { color: var(--gold); }
+.hero-chip.purple i { color: var(--accent-purple); }
+.hero-chip.green i  { color: var(--green); }
 
 .hero-ctas {
     display: flex;
@@ -1952,25 +1986,27 @@ section {
     .hero-container {
         grid-template-columns: 1fr;
         gap: 36px;
-        text-align: center;
+        text-align: left;
     }
 
     .hero-content {
-        align-items: center;
+        align-items: flex-start;
     }
 
     .hero-title {
         font-size: 2.8rem;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .hero-desc {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
     }
 
     .profile-card {
         max-width: 380px;
+        margin: 0 auto;
     }
 
     .stats-grid {
@@ -2590,10 +2626,16 @@ section {
         line-height: 1.2;
     }
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
     .hero-desc {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .hero-highlights {
+        justify-content: flex-start;
     }
     .hero-ctas {
         flex-direction: column;
@@ -2607,8 +2649,8 @@ section {
     .badge-glow {
         font-size: 0.7rem;
     }
-    .hero-flag {
-        font-size: 1.6rem;
+    .hero-flag-img {
+        height: 36px !important;
     }
     /* Shrink decorative orbs so they don't cause horizontal overflow */
     .glowing-orb-1 {
