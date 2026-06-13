@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohammad | Software Engineer & AI Specialist Portfolio. Showcasing expertise in Java, Python, Spring Boot, FastAPI, Machine Learning, and Cloud development.">
+    <meta name="keywords" content="Mohammad, Portfolio, Software Engineer, Java, Python, Spring Boot, FastAPI, Machine Learning, AI, Google Cloud, Codevita, SIH 2025">
+    <meta name="author" content="Mohammad">
+    <title>Mohammad | Software Engineer & AI Specialist</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Devicon brand logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                Mohammad <img src="images/india-waving-flag-realistic-transparent-background-free-png.webp" alt="India Flag" class="logo-flag-img">
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#stats" class="nav-link">Metrics</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#credentials" class="nav-link">Credentials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" aria-label="Toggle dark/light theme" class="theme-btn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <!-- Mobile Menu Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="background-grid"></div>
+            <div class="glowing-orb-1"></div>
+            <div class="glowing-orb-2"></div>
+            
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-glow">Engineering Premium Systems</div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Mohammad</span> <img src="images/india-waving-flag-realistic-transparent-background-free-png.webp" alt="India Flag" class="hero-flag-img">
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        Software Engineer & AI Specialist
+                    </h2>
+                    <div class="principles-banner">
+                        <span><i class="fa-solid fa-peace"></i> Calm over chaos</span>
+                        <span class="principles-divider">&bull;</span>
+                        <span><i class="fa-solid fa-anchor"></i> Depth over shallow</span>
+                        <span class="principles-divider">&bull;</span>
+                        <span><i class="fa-solid fa-timeline"></i> Long-term stability</span>
+                    </div>
+                    <p class="hero-desc">
+                        A final-year B.Tech Computer Science student and active Software Engineering Intern. I design decentralized backend APIs, engineer lightweight deep learning classifiers, and develop high-performance applications. Aligarh Muslim University (AMU) alumnus. Based in Kharagpur, West Bengal.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">View Works <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+
+                <!-- Profile Floating Card -->
+                <div class="profile-wrapper">
+                    <div class="profile-card glass">
+                        <div class="profile-image-container">
+                            <img src="images/your_photo.jpg" alt="Mohammad Profile Picture" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="profile-avatar-fallback">
+                                <span>M</span>
+                            </div>
+                            <div class="status-indicator-dot"></div>
+                        </div>
+                        
+                        <div class="badge-amu" title="Aligarh Muslim University Alumnus">
+                            <i class="fa-solid fa-graduation-cap"></i> AMU Alumnus
+                        </div>
+                        
+                        <h3 class="profile-name">Mohammad</h3>
+                        <p class="profile-role">Software Engineering Intern</p>
+                        
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="mailto:mohammad.worklife@gmail.com">mohammad.worklife@gmail.com</a>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>+91 9547764638</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Kharagpur, West Bengal</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com/itssmdsh" target="_blank" aria-label="GitHub" class="social-icon">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/itsmdsh/" target="_blank" aria-label="LinkedIn" class="social-icon">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://leetcode.com/u/its_mdsh/" target="_blank" aria-label="LeetCode" class="social-icon">
+                                <svg class="leetcode-svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-9.8 9.8a1.375 1.375 0 0 0 0 1.947l9.8 9.8a1.375 1.375 0 0 0 1.947-1.947l-8.826-8.827 8.825-8.825A1.375 1.375 0 0 0 13.483 0zM20.37 7.744a1.375 1.375 0 0 0-1.375 1.375v5.762a1.375 1.375 0 0 0 2.75 0V9.12a1.375 1.375 0 0 0-1.375-1.375z"/>
+                                    <path d="M16.518 4.296a1.375 1.375 0 0 0-1.375 1.375v12.658a1.375 1.375 0 0 0 2.75 0V5.671a1.375 1.375 0 0 0-1.375-1.375z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google & Professional Digital Badges Section (In between Hero and Console) -->
+        <div class="gallery-sub-heading hero-badges-subheading">
+            <span class="carousel-section-tag"><i class="fa-solid fa-medal"></i> Google & Professional Digital Badges</span>
+        </div>
+        <div class="certificate-carousel-container hero-badges-carousel">
+            <div class="carousel-track track-c" id="carousel-track-c">
+                <!-- 1. AI Essentials -->
+                <div class="carousel-slide badge-slide" data-title="Google AI Essentials V1" data-issuer="Google" data-date="Oct 2024" data-image="images/ai-eesential_badge (1).png" data-desc="Official digital badge validating core skills in generative AI, prompt design, and AI integrations.">
+                    <img src="images/ai-eesential_badge (1).png" alt="Google AI Essentials Badge">
+                    <div class="slide-overlay"><span>AI Essentials <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 2. BI Badge -->
+                <div class="carousel-slide badge-slide" data-title="Google Business Intelligence Certificate" data-issuer="Google" data-date="Oct 2024" data-image="images/bi-badge.png" data-desc="Official digital badge validating skills in data warehousing, dimensional modeling, and ETL pipeline designs.">
+                    <img src="images/bi-badge.png" alt="Google Business Intelligence Badge">
+                    <div class="slide-overlay"><span>Business Intelligence <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 3. Cybersecurity -->
+                <div class="carousel-slide badge-slide" data-title="Google Cybersecurity Professional Certificate" data-issuer="Google" data-date="Oct 2024" data-image="images/cybersecirity-badge.png" data-desc="Official digital badge validating expertise in network security, SQL databases, Python security scripting, and incident response.">
+                    <img src="images/cybersecirity-badge.png" alt="Google Cybersecurity Badge">
+                    <div class="slide-overlay"><span>Cybersecurity <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 4. Advanced Data Analytics -->
+                <div class="carousel-slide badge-slide" data-title="Google Advanced Data Analytics Certificate" data-issuer="Google" data-date="Oct 2024" data-image="images/data_analytics_badge.png" data-desc="Official digital badge validating advanced expertise in regression modeling, machine learning algorithms, and predictive analytics.">
+                    <img src="images/data_analytics_badge.png" alt="Google Advanced Data Analytics Badge">
+                    <div class="slide-overlay"><span>Advanced Analytics <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 5. Data Analytics -->
+                <div class="carousel-slide badge-slide" data-title="Google Data Analytics Professional Certificate" data-issuer="Google" data-date="Oct 2024" data-image="images/data analytucs badge.png" data-desc="Official digital badge validating core capabilities in data cleaning, SQL analysis, Tableau dashboards, and R programming.">
+                    <img src="images/data analytucs badge.png" alt="Google Data Analytics Badge">
+                    <div class="slide-overlay"><span>Data Analytics <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 6. Digital Marketing -->
+                <div class="carousel-slide badge-slide" data-title="Google Digital Marketing & E-Commerce Certificate" data-issuer="Google" data-date="Oct 2024" data-image="images/digtsl an decomm badge.png" data-desc="Official digital badge validating skills in SEO, marketing analytics, and e-commerce platforms config.">
+                    <img src="images/digtsl an decomm badge.png" alt="Google Digital Marketing & E-Commerce Badge">
+                    <div class="slide-overlay"><span>Digital Marketing <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 7. IT Support -->
+                <div class="carousel-slide badge-slide" data-title="Google IT Support Professional Certificate" data-issuer="Google" data-date="Jul 2023" data-image="images/it_support_badge.png" data-desc="Official digital badge validating core troubleshooting skills, OS management, systems administration, and IT security.">
+                    <img src="images/it_support_badge.png" alt="Google IT Support Badge">
+                    <div class="slide-overlay"><span>IT Support <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 8. UX Design -->
+                <div class="carousel-slide badge-slide" data-title="Google UX Design Professional Certificate" data-issuer="Google" data-date="Oct 2024" data-image="images/ux_badge.png" data-desc="Official digital badge validating expertise in wireframing, high-fidelity prototypes, user testing, and research.">
+                    <img src="images/ux_badge.png" alt="Google UX Design Badge">
+                    <div class="slide-overlay"><span>UX Design <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 9. IT Automation Python -->
+                <div class="carousel-slide badge-slide" data-title="Google IT Automation with Python Certificate" data-issuer="Google" data-date="Apr 2024" data-image="images/google it autmation with pythno badge.png" data-desc="Official digital badge validating expertise in Python automation, git configuration control, and system administration.">
+                    <img src="images/google it autmation with pythno badge.png" alt="IT Automation with Python Badge">
+                    <div class="slide-overlay"><span>IT Automation <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+                <!-- 10. IBM DS -->
+                <div class="carousel-slide badge-slide" data-title="Getting Started with Enterprise Data Science" data-issuer="IBM" data-date="Jan 2024" data-image="images/ibm-getting started iwth enetrprise.png" data-desc="Official Credly digital badge validating fundamental skills in enterprise data science workflows.">
+                    <img src="images/ibm-getting started iwth enetrprise.png" alt="IBM Enterprise Data Science Badge">
+                    <div class="slide-overlay"><span>IBM Data Science <i class="fa-solid fa-expand"></i></span></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Stats Dashboard Section -->
+        <section id="stats" class="stats-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Performances & Standing</span>
+                    <h2 class="section-title">Developer Console</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="stats-grid">
+                    <!-- LeetCode Progress Card -->
+                    <div class="stats-card glass">
+                        <div class="card-glow"></div>
+                        <div class="stats-card-header">
+                            <h3>LeetCode Metrics</h3>
+                            <a href="https://leetcode.com/u/its_mdsh/" target="_blank" class="card-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <div class="leetcode-summary">
+                            <div class="circular-progress-wrapper">
+                                <svg class="progress-circle" viewBox="0 0 100 100">
+                                    <circle class="bg" cx="50" cy="50" r="40"></circle>
+                                    <circle class="bar leetcode-bar" cx="50" cy="50" r="40" style="stroke-dasharray: 251.2; stroke-dashoffset: 115;"></circle>
+                                </svg>
+                                <div class="progress-text">
+                                    <span class="number" id="leetcode-total">271</span>
+                                    <span class="label">Solved</span>
+                                </div>
+                            </div>
+                            <div class="leetcode-stats-details">
+                                <div class="stat-row">
+                                    <span class="circle-bullet easy"></span>
+                                    <span class="bullet-label">Easy</span>
+                                    <span class="bullet-value" id="leetcode-easy">75</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="circle-bullet medium"></span>
+                                    <span class="bullet-label">Medium</span>
+                                    <span class="bullet-value" id="leetcode-medium">159</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="circle-bullet hard"></span>
+                                    <span class="bullet-label">Hard</span>
+                                    <span class="bullet-value" id="leetcode-hard">37</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Competitive Standing Card -->
+                    <div class="stats-card glass info-stats-card">
+                        <div class="card-glow"></div>
+                        <h3>National competitive Standings</h3>
+                        <div class="rankings-list">
+                            <div class="rank-item-interactive" data-title="TATA CodeVita Season XIII" data-issuer="Tata Consultancy Services" data-date="2025" data-image="images/codevita_cert.png" data-desc="Secured a global rank of 3348 in TCS CodeVita Season 13, showcasing exceptional competitive programming capabilities.">
+                                <div class="rank-icon-wrapper gold-glow"><i class="fa-solid fa-trophy"></i></div>
+                                <div class="rank-info">
+                                    <span class="rank-title">TATA CodeVita Season XIII</span>
+                                    <span class="rank-value">AIR 3348</span>
+                                    <span class="interactive-tag"><i class="fa-solid fa-image"></i> View Certificate</span>
+                                </div>
+                            </div>
+                            <div class="rank-item-interactive" data-title="GATE Computer Science 2025" data-issuer="IIT Bombay" data-date="2025" data-image="images/gate_cs_scorecard.png" data-desc="Qualified the prestigious GATE CS examination with a national rank of 10,283.">
+                                <div class="rank-icon-wrapper purple-glow"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="rank-info">
+                                    <span class="rank-title">GATE CS 2025</span>
+                                    <span class="rank-value">AIR 10,283</span>
+                                    <span class="interactive-tag"><i class="fa-solid fa-image"></i> View Scorecard</span>
+                                </div>
+                            </div>
+                            <div class="rank-item-interactive" data-title="GATE Data Science & AI 2026" data-issuer="IIT Kanpur" data-date="2026" data-image="images/gat eda rank card.jpeg" data-desc="Qualified GATE Data Science and Artificial Intelligence paper with a national rank of 5,690.">
+                                <div class="rank-icon-wrapper cyan-glow"><i class="fa-solid fa-chart-line"></i></div>
+                                <div class="rank-info">
+                                    <span class="rank-title">GATE DA 2026</span>
+                                    <span class="rank-value">Rank 5,690</span>
+                                    <span class="interactive-tag"><i class="fa-solid fa-image"></i> View Rank Card</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub & LeetCode Activity Hub (Full Width) -->
+                    <div class="stats-card glass github-stats-card">
+                        <div class="card-glow"></div>
+                        <div class="stats-card-header">
+                            <h3>Activity & Coding Streaks Hub</h3>
+                            <div class="header-links">
+                                <a href="https://github.com/itssmdsh" target="_blank" class="card-link" title="GitHub Profile" style="margin-right: 12px;"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://leetcode.com/u/its_mdsh/" target="_blank" class="card-link" title="LeetCode Profile"><i class="fa-solid fa-code"></i></a>
+                            </div>
+                        </div>
+                        <div class="hub-columns-container">
+                            <!-- Left Column: GitHub -->
+                            <div class="hub-column github-theme">
+                                <h4 class="chart-subtitle"><i class="fa-brands fa-github"></i> GitHub Contribution Matrix</h4>
+                                <div class="github-chart-container">
+                                    <div class="contrib-calendar-container" id="github-calendar-container">
+                                        <div class="contrib-calendar-header" id="github-months"></div>
+                                        <div class="contrib-calendar-body">
+                                            <div class="contrib-calendar-weekdays">
+                                                <span></span><span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span>
+                                            </div>
+                                            <div class="contrib-calendar-grid" id="github-heatmap"></div>
+                                        </div>
+                                        <div class="contrib-calendar-footer">
+                                            <span class="contrib-count-label" id="github-contrib-count">Loading contributions...</span>
+                                            <div class="contrib-legend">
+                                                <span>Less</span>
+                                                <div class="legend-cell level-0"></div>
+                                                <div class="legend-cell level-1"></div>
+                                                <div class="legend-cell level-2"></div>
+                                                <div class="legend-cell level-3"></div>
+                                                <div class="legend-cell level-4"></div>
+                                                <span>More</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="streak-stats-row">
+                                    <div class="streak-stat-box">
+                                        <span class="val" id="github-total-contribs">--</span>
+                                        <span class="lbl">Total Contribs</span>
+                                    </div>
+                                    <div class="streak-stat-box highlight-green">
+                                        <div class="icon-glow"><i class="fa-solid fa-fire"></i></div>
+                                        <span class="val" id="github-curr-streak">--</span>
+                                        <span class="lbl">Current Streak</span>
+                                    </div>
+                                    <div class="streak-stat-box">
+                                        <span class="val" id="github-longest-streak">--</span>
+                                        <span class="lbl">Longest Streak</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: LeetCode -->
+                            <div class="hub-column leetcode-theme">
+                                <h4 class="chart-subtitle">
+                                    <svg class="leetcode-svg inline-icon" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 4px; width: 14px; height: 14px;">
+                                        <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-9.8 9.8a1.375 1.375 0 0 0 0 1.947l9.8 9.8a1.375 1.375 0 0 0 1.947-1.947l-8.826-8.827 8.825-8.825A1.375 1.375 0 0 0 13.483 0zM20.37 7.744a1.375 1.375 0 0 0-1.375 1.375v5.762a1.375 1.375 0 0 0 2.75 0V9.12a1.375 1.375 0 0 0-1.375-1.375z"/>
+                                        <path d="M16.518 4.296a1.375 1.375 0 0 0-1.375 1.375v12.658a1.375 1.375 0 0 0 2.75 0V5.671a1.375 1.375 0 0 0-1.375-1.375z"/>
+                                    </svg>
+                                    LeetCode Submission Matrix
+                                </h4>
+                                <div class="leetcode-chart-container">
+                                    <div class="contrib-calendar-container leetcode-style" id="leetcode-calendar-container">
+                                        <div class="contrib-calendar-header" id="leetcode-months"></div>
+                                        <div class="contrib-calendar-body">
+                                            <div class="contrib-calendar-weekdays">
+                                                <span></span><span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span>
+                                            </div>
+                                            <div class="contrib-calendar-grid" id="leetcode-heatmap"></div>
+                                        </div>
+                                        <div class="contrib-calendar-footer">
+                                            <span class="contrib-count-label" id="leetcode-contrib-count">Loading submissions...</span>
+                                            <div class="contrib-legend">
+                                                <span>Less</span>
+                                                <div class="legend-cell level-0"></div>
+                                                <div class="legend-cell level-1"></div>
+                                                <div class="legend-cell level-2"></div>
+                                                <div class="legend-cell level-3"></div>
+                                                <div class="legend-cell level-4"></div>
+                                                <span>More</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="streak-stats-row">
+                                    <div class="streak-stat-box">
+                                        <span class="val" id="leetcode-ranking-val">--</span>
+                                        <span class="lbl">Global Ranking</span>
+                                    </div>
+                                    <div class="streak-stat-box highlight-orange">
+                                        <div class="icon-glow"><i class="fa-solid fa-fire"></i></div>
+                                        <span class="val" id="leetcode-curr-streak">--</span>
+                                        <span class="lbl">Current Streak</span>
+                                    </div>
+                                    <div class="streak-stat-box">
+                                        <span class="val" id="leetcode-active-days">--</span>
+                                        <span class="lbl">Active Days</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Expertise</span>
+                    <h2 class="section-title">Technical Capabilities</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Languages -->
+                    <div class="skill-card glass">
+                        <div class="skill-card-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Programming & Web</h3>
+                        <div class="skill-badges">
+                            <span class="badge"><i class="devicon-java-plain colored"></i> Java</span>
+                            <span class="badge"><i class="devicon-python-plain colored"></i> Python</span>
+                            <span class="badge"><i class="devicon-c-plain colored"></i> C</span>
+                            <span class="badge"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                            <span class="badge"><i class="devicon-mysql-plain colored"></i> SQL</span>
+                            <span class="badge"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                            <span class="badge"><i class="devicon-css3-plain colored"></i> CSS3</span>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="skill-card glass">
+                        <div class="skill-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>Frameworks & APIs</h3>
+                        <div class="skill-badges">
+                            <span class="badge"><i class="devicon-spring-plain colored"></i> Spring Boot</span>
+                            <span class="badge"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+                            <span class="badge"><i class="devicon-django-plain"></i> Django</span>
+                            <span class="badge"><i class="devicon-express-original"></i> Express.js</span>
+                            <span class="badge"><i class="devicon-react-original colored"></i> React</span>
+                            <span class="badge"><i class="devicon-angularjs-plain colored"></i> Angular</span>
+                            <span class="badge"><i class="fa-solid fa-gears"></i> REST APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="skill-card glass">
+                        <div class="skill-card-icon"><i class="fa-solid fa-database"></i></div>
+                        <h3>Databases & Storage</h3>
+                        <div class="skill-badges">
+                            <span class="badge"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                            <span class="badge"><i class="devicon-oracle-original colored"></i> Oracle SQL</span>
+                            <span class="badge"><i class="fa-solid fa-database"></i> DBMS</span>
+                            <span class="badge"><i class="fa-solid fa-network-wired"></i> Vector DBs</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & Tools -->
+                    <div class="skill-card glass">
+                        <div class="skill-card-icon"><i class="fa-solid fa-cloud"></i></div>
+                        <h3>Cloud & Tooling</h3>
+                        <div class="skill-badges">
+                            <span class="badge"><i class="devicon-googlecloud-plain colored"></i> Google Cloud</span>
+                            <span class="badge"><i class="devicon-vercel-original"></i> Vercel</span>
+                            <span class="badge"><i class="fa-solid fa-server"></i> Render</span>
+                            <span class="badge"><i class="devicon-git-plain colored"></i> Git & GitHub</span>
+                            <span class="badge"><i class="devicon-maven-plain colored"></i> Maven</span>
+                            <span class="badge"><i class="devicon-postman-plain colored"></i> Postman</span>
+                            <span class="badge"><i class="devicon-terraform-plain colored"></i> Terraform</span>
+                        </div>
+                    </div>
+
+                    <!-- AI & Machine Learning -->
+                    <div class="skill-card glass AI-card">
+                        <div class="skill-card-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>AI & Deep Learning</h3>
+                        <div class="skill-badges">
+                            <span class="badge"><i class="fa-solid fa-robot"></i> ML Training</span>
+                            <span class="badge"><i class="fa-solid fa-comments"></i> LLM APIs</span>
+                            <span class="badge"><i class="fa-solid fa-brain"></i> RAG</span>
+                            <span class="badge"><i class="devicon-opencv-plain colored"></i> OpenCV</span>
+                            <span class="badge"><i class="devicon-tensorflow-line colored"></i> TensorFlow</span>
+                            <span class="badge"><i class="fa-solid fa-hand"></i> MediaPipe</span>
+                            <span class="badge"><i class="fa-solid fa-diagram-project"></i> CNNs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Collabs</span>
+                    <h2 class="section-title">Professional Experience</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="timeline-list">
+                    <!-- Work Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-num">1</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-title-row">
+                                    <h3>Software Engineering Intern</h3>
+                                    <span class="timeline-org">Aptpath &middot; Remote</span>
+                                </div>
+                                <span class="timeline-duration">May 2026 — Present</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Co-architecting backend workflow engines and secure authentication endpoints with Django. Decoupling KYC integrations and designing mock endpoint sandbox runners for third-party service payload validation.
+                            </p>
+                            <div class="collab-tech">
+                                <span class="tech-tag"><i class="devicon-django-plain"></i> Django</span>
+                                <span class="tech-tag"><i class="fa-solid fa-gears"></i> REST APIs</span>
+                                <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
+                                <span class="tech-tag"><i class="fa-solid fa-shield-halved"></i> KYC Integration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-num">2</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-title-row">
+                                    <h3>Software Engineering Intern</h3>
+                                    <span class="timeline-org">Infosys Springboard &middot; Remote</span>
+                                </div>
+                                <span class="timeline-duration">Feb 2026 — Apr 2026</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Co-developed client order dashboards, catalog services, and transactional management modules using Spring Boot and Angular. Built integration tests and structured database operations using MySQL via JDBC.
+                            </p>
+                            <div class="collab-tech">
+                                <span class="tech-tag"><i class="devicon-spring-plain colored"></i> Spring Boot</span>
+                                <span class="tech-tag"><i class="devicon-angularjs-plain colored"></i> Angular</span>
+                                <span class="tech-tag"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                                <span class="tech-tag"><i class="fa-solid fa-database"></i> JDBC</span>
+                                <span class="tech-tag"><i class="devicon-maven-plain colored"></i> Maven</span>
+                            </div>
+                            <div class="timeline-actions">
+                                <a href="#" class="btn btn-secondary btn-sm rank-item-interactive" data-title="Infosys Springboard Internship Certificate" data-issuer="Infosys Springboard" data-date="Apr 2026" data-image="images/infosys soringboard nternship cert.png" data-desc="Official internship certificate awarded by Infosys Springboard for co-developing customer order and inventory modules."><i class="fa-solid fa-certificate"></i> View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-num">3</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-title-row">
+                                    <h3>AI/ML Intern</h3>
+                                    <span class="timeline-org">Edunet Foundation &middot; Remote</span>
+                                </div>
+                                <span class="timeline-duration">Dec 2023 — Jan 2024</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Managed exploratory data analysis, dataset cleanups, outlier detection, and structural feature scaling. Evaluated regression models and communicated validation metrics to project mentors to drive model updates.
+                            </p>
+                            <div class="collab-tech">
+                                <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
+                                <span class="tech-tag"><i class="fa-solid fa-chart-line"></i> Pandas</span>
+                                <span class="tech-tag"><i class="fa-solid fa-robot"></i> Scikit-Learn</span>
+                                <span class="tech-tag"><i class="fa-solid fa-gears"></i> Feature Engineering</span>
+                            </div>
+                            <div class="timeline-actions">
+                                <a href="#" class="btn btn-secondary btn-sm rank-item-interactive" data-title="Edunet Foundation AI/ML Internship Certificate" data-issuer="Edunet Foundation (via IBM SkillsBuild)" data-date="Jan 2024" data-image="images/ednet foundatin interjsuip cert.png" data-desc="Official completion certificate for the exploratory AI/ML internship issued by Edunet Foundation."><i class="fa-solid fa-certificate"></i> View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">History</span>
+                    <h2 class="section-title">Academic Pathway</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="timeline-list">
+                    <!-- Edu Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-num">1</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-title-row">
+                                    <h3>B.Tech in Computer Science & Engineering</h3>
+                                    <span class="timeline-org">College of Engineering & Management, Kolaghat (CEMK)</span>
+                                </div>
+                                <span class="timeline-duration">2022 — 2026</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Pursuing a Bachelor of Technology in Computer Science. CSE Department Topper for the academic session 2023-24 (highest semester examination SGPA). Recipient of a full Tuition Fee Waiver (TFW) seat and continuous State Aikyashree Scholarship awards for excellence.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="#" class="btn btn-secondary btn-sm rank-item-interactive" data-title="CSE Topper Merit Certificate" data-issuer="College of Engineering & Management, Kolaghat" data-date="Sep 2024" data-image="images/merit_cert.png" data-desc="Merit Certificate awarded for securing first position (highest SGPA) in Computer Science department."><i class="fa-solid fa-certificate"></i> View Topper Certificate</a>
+                                <a href="#" class="btn btn-secondary btn-sm rank-item-interactive" data-title="Tuition Fee Waiver (TFW) details" data-issuer="West Bengal State Government" data-date="2022 - 2026" data-image="images/Screenshot 2026-06-13 145014.png" data-desc="Awarded a Tuition Fee Waiver (TFW) seat based on top-tier placement rankings."><i class="fa-solid fa-award"></i> View Scholarship Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edu Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-num">2</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-title-row">
+                                    <h3>Aligarh Muslim University (AMU)</h3>
+                                    <span class="timeline-org">Aligarh, Uttar Pradesh</span>
+                                </div>
+                                <span class="timeline-duration">Alumnus</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Aligarh Muslim University (AMU) alumnus. Highly active and proud member of the AMU academic community, valuing its long-term principles of depth, calmness, and stability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Edu Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-num">3</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-title-row">
+                                    <h3>Higher Secondary Schooling</h3>
+                                    <span class="timeline-org">S.E. Rly School (EM)</span>
+                                </div>
+                                <span class="timeline-duration">Class of 2020</span>
+                            </div>
+                            <p class="timeline-desc">
+                                Completed higher secondary education with a science focus. Appointed as the House Vice-Captain, representing student leadership, cultural coordination, and sports organization.
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="#" class="btn btn-secondary btn-sm rank-item-interactive" data-title="Appointed House Vice-Captain Certificate" data-issuer="S.E. Rly School (EM)" data-date="2019" data-image="images/Screenshot 2026-06-13 145030.png" data-desc="House Vice-Captain appointment badge validating student leadership achievements."><i class="fa-solid fa-users"></i> View Appointment Badge</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Projects Grid Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Creations</span>
+                    <h2 class="section-title">Selected Projects</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Ishaara -->
+                    <div class="project-card glass">
+                        <div class="project-banner rank-item-interactive" data-title="Ishaara App Screenshots" data-issuer="AI Project Showcase" data-date="2025" data-image="images/ishaara1.png" data-desc="Mobile layout and dataset generation of Ishaara - a sign language translation pipeline. Click to inspect details." style="background-image: url('images/ishaara2.png'); cursor: pointer;">
+                            <div class="banner-gradient"></div>
+                            <span class="project-category">AI / Computer Vision</span>
+                            <div class="banner-photo-prompt"><i class="fa-solid fa-magnifying-glass-plus"></i> View Interface</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Ishaara — Sign Language Speech</h3>
+                            <p class="project-description">
+                                Engineered a computer vision pipeline mapping hand gestures into coordinates for predictions. Deployed a lightweight offline classification network on Android for real-time translation.
+                            </p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>MediaPipe</span>
+                                <span>OpenCV</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://ishaara-website.vercel.app/" target="_blank" class="btn btn-primary btn-sm">Web App <i class="fa-solid fa-external-link-alt"></i></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.ishaara.signify" target="_blank" class="btn btn-secondary btn-sm">Android App <i class="fa-brands fa-android"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Conversational SHL Recommender -->
+                    <div class="project-card glass">
+                        <div class="project-banner rank-item-interactive" data-title="Conversational SHL Assessment interface" data-issuer="Generative AI Project" data-date="2025" data-image="images/shl-assessment.png" data-desc="AI hiring recommendation chat module and vector indexing interface of the SHL Recommender." style="background-image: url('images/shl-assessment.png'); cursor: pointer;">
+                            <div class="banner-gradient"></div>
+                            <span class="project-category">Generative AI / RAG</span>
+                            <div class="banner-photo-prompt"><i class="fa-solid fa-magnifying-glass-plus"></i> View Interface</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Conversational SHL Recommender</h3>
+                            <p class="project-description">
+                                Built an AI-driven recruitment assistant utilizing RAG over a vector database to recommend skills assessment paths. Formulated custom memory components to handle long-term conversation tracking.
+                            </p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>FastAPI</span>
+                                <span>RAG</span>
+                                <span>Vector DB</span>
+                                <span>OpenRouter</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://v0-ai-hiring-assistant-alpha.vercel.app/" target="_blank" class="btn btn-primary btn-sm">Web App <i class="fa-solid fa-external-link-alt"></i></a>
+                                <a href="https://github.com/itssmdsh/shl_recommendation" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-github"></i> Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Apply Tracker -->
+                    <div class="project-card glass">
+                        <div class="project-banner rank-item-interactive" data-title="Apply Tracker Dashboard interface" data-issuer="Full-Stack Project" data-date="2025" data-image="images/job-tracker-1.png" data-desc="Visual dashboard analytics and job listing metrics of Apply Tracker aggregator." style="background-image: url('images/job-tracker-2.png'); cursor: pointer;">
+                            <div class="banner-gradient"></div>
+                            <span class="project-category">Full-Stack Web</span>
+                            <div class="banner-photo-prompt"><i class="fa-solid fa-magnifying-glass-plus"></i> View Interface</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Apply Tracker — Job Aggregator</h3>
+                            <p class="project-description">
+                                A full-stack platform scraping job boards in real-time. Features structured Google Forms data binding, custom script pipelines for field mapping, strict TypeScript interfaces, and custom timeframe filters.
+                            </p>
+                            <div class="project-tech">
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Cheerio</span>
+                                <span>Tailwind</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://job-tracker-nine-neon.vercel.app/" target="_blank" class="btn btn-primary btn-sm">Web App <i class="fa-solid fa-external-link-alt"></i></a>
+                                <a href="https://github.com/itssmdsh/jobTracker" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-github"></i> Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: MediScan -->
+                    <div class="project-card glass">
+                        <div class="project-banner rank-item-interactive" data-title="MediScan - Skin disease diagnosis panel" data-issuer="Deep Learning / Medical AI" data-date="2025" data-image="images/mediscan-web.png" data-desc="Web application skin lesion deep CNN diagnosis and reports screen of MediScan." style="background-image: url('images/mediscan-web.png'); cursor: pointer;">
+                            <div class="banner-gradient"></div>
+                            <span class="project-category">Deep Learning / Medical AI</span>
+                            <div class="banner-photo-prompt"><i class="fa-solid fa-magnifying-glass-plus"></i> View Interface</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>MediScan — Skin Disease Detection</h3>
+                            <p class="project-description">
+                                Designed a deep CNN screening system for multi-class skin lesion classification. The asynchronous Render/FastAPI API backend decouples inference heavy CV workloads from the Vercel-hosted frontend for rapid loading.
+                            </p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Keras</span>
+                                <span>CNNs</span>
+                                <span>FastAPI</span>
+                                <span>Render API</span>
+                                <span>Vercel</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://v0-medi-scan-web-application-kn6qt1.vercel.app/" target="_blank" class="btn btn-primary btn-sm">Web App <i class="fa-solid fa-external-link-alt"></i></a>
+                                <a href="https://github.com/itssmdsh/MediScan" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-github"></i> Repository</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Certifications Auto-Rolling Gallery -->
+        <section id="credentials" class="credentials-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Credentials & Gallery</span>
+                    <h2 class="section-title">Achievements & Event Highlights</h2>
+                    <div class="divider"></div>
+                </div>
+            </div>
+
+            <!-- SECTION A: SIH 2025 Journey Slider -->
+            <div class="gallery-sub-heading">
+                <span class="carousel-section-tag"><i class="fa-solid fa-trophy"></i> Smart India Hackathon 2025 Journey</span>
+            </div>
+            <div class="certificate-carousel-container">
+                <div class="carousel-track track-a" id="carousel-track-a">
+                    <!-- 1. SIH DD News 1 -->
+                    <div class="carousel-slide" data-title="Featured on DD News Channel" data-issuer="Doordarshan National News" data-date="Dec 2025" data-image="images/sih on ddnews.png" data-desc="Our Smart India Hackathon final team presentation featured live on Doordarshan National News channel.">
+                        <img src="images/sih on ddnews.png" alt="SIH on DD News">
+                        <div class="slide-overlay"><span>Featured on DD News <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 2. SIH Certificate Receiving -->
+                    <div class="carousel-slide" data-title="Receiving SIH Certificate" data-issuer="Smart India Hackathon Center Officials" data-date="Dec 2025" data-image="images/sh _certficate rceung.jpeg" data-desc="Receiving the official SIH 2025 National Finalist certificate at the nodal center.">
+                        <img src="images/sh _certficate rceung.jpeg" alt="Receiving SIH Cert">
+                        <div class="slide-overlay"><span>Receiving SIH Cert <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 3. SIH Trophy -->
+                    <div class="carousel-slide" data-title="Holding the SIH Shield" data-issuer="SIH Nodal Center" data-date="Dec 2025" data-image="images/sih_tro.jpeg" data-desc="Team group photo holding our finalist shield at the closing ceremony of SIH.">
+                        <img src="images/sih_tro.jpeg" alt="SIH Team Shield">
+                        <div class="slide-overlay"><span>Finalist Trophy <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 4. SIH Team Group -->
+                    <div class="carousel-slide" data-title="Smart India Hackathon Team Photo" data-issuer="Ministry of Education" data-date="Dec 2025" data-image="images/sih_photo.jpg" data-desc="Group photo of our development team in front of the official Smart India Hackathon banner at the center.">
+                        <img src="images/sih_photo.jpg" alt="SIH Team Photo">
+                        <div class="slide-overlay"><span>SIH Team Photo <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 5. SIH DD News 2 -->
+                    <div class="carousel-slide" data-title="DD News Live Broadcast Coverage" data-issuer="Doordarshan National News" data-date="Dec 2025" data-image="images/sih o ddnbew 2.png" data-desc="Live broadcast clip showing our team coding on stage during the news highlight segment.">
+                        <img src="images/sih o ddnbew 2.png" alt="DD News Broadcast Clip">
+                        <div class="slide-overlay"><span>DD News Coverage <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 6. SIH Discussion -->
+                    <div class="carousel-slide" data-title="Team Coding Discussion" data-issuer="SIH 2025 Hackathon" data-date="Dec 2025" data-image="images/sih discussion.jpeg" data-desc="Active developer design modeling and system architecture discussion during the 36-hour hackathon.">
+                        <img src="images/sih discussion.jpeg" alt="Team Discussion">
+                        <div class="slide-overlay"><span>Team Discussion <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 7. SIH Casual -->
+                    <div class="carousel-slide" data-title="Casual Team Photo" data-issuer="SIH 2025" data-date="Dec 2025" data-image="images/sihcasual.jpeg" data-desc="Team picture at the closing dinner ceremony of the hackathon event.">
+                        <img src="images/sihcasual.jpeg" alt="SIH Casual Photo">
+                        <div class="slide-overlay"><span>Team Casual <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION B: Academic Excellence & Coding Honors Slider -->
+            <div class="gallery-sub-heading">
+                <span class="carousel-section-tag"><i class="fa-solid fa-award"></i> Academic Excellence & Coding Honors</span>
+            </div>
+            <div class="certificate-carousel-container">
+                <div class="carousel-track track-b" id="carousel-track-b">
+                    <!-- 1. merit cert -->
+                    <div class="carousel-slide" data-title="CSE Department Topper Merit Certificate" data-issuer="College of Engineering & Management, Kolaghat" data-date="Sep 2024" data-image="images/merit_cert.png" data-desc="Awarded first position in the CSE department for academic session 2023-24 (highest semester examinations SGPA).">
+                        <img src="images/merit_cert.png" alt="Merit Certificate Department Topper">
+                        <div class="slide-overlay"><span>Department Topper Cert <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 2. merit receiving -->
+                    <div class="carousel-slide" data-title="Receiving Academic Merit Shield" data-issuer="CEM Kolaghat College Director" data-date="Sep 2024" data-image="images/award_photo.jpg" data-desc="Receiving the official academic excellence shield on the 27th Foundation Day for department topper ranks.">
+                        <img src="images/award_photo.jpg" alt="Award Shield Presentation">
+                        <div class="slide-overlay"><span>Receiving Merit Award <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 3. Coding Competition prize -->
+                    <div class="carousel-slide" data-title="1st Place Coding Competition - Shield Ceremony" data-issuer="CEM CSE Department" data-date="2024" data-image="images/dept codng coot 1st prize receing toen o fapprecation.jpeg" data-desc="Receiving the token of appreciation and shield for winning 1st Place in the department-level coding competition.">
+                        <img src="images/dept codng coot 1st prize receing toen o fapprecation.jpeg" alt="Receiving Coding Prize">
+                        <div class="slide-overlay"><span>Coding 1st Prize <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 4. Startup presentation -->
+                    <div class="carousel-slide" data-title="Rank 2 Startup Poster Presentation" data-issuer="College IIC Cell & Startup Hub" data-date="2024" data-image="images/startup poster prsneation rank 2.png" data-desc="Official Certificate of Excellence for securing 2nd position in the Startup Poster Presentation.">
+                        <img src="images/startup poster prsneation rank 2.png" alt="Startup poster presentation Rank 2">
+                        <div class="slide-overlay"><span>Startup Pitch Rank 2 <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                    <!-- 5. Netaji quiz -->
+                    <div class="carousel-slide" data-title="1st Prize Netaji Quiz Competition" data-issuer="College Cultural Council" data-date="Jan 2024" data-image="images/netaji-quiz-1st.png" data-desc="Official certificate for securing 1st Position in the Netaji Quiz Competition.">
+                        <img src="images/netaji-quiz-1st.png" alt="Netaji Quiz 1st Place">
+                        <div class="slide-overlay"><span>Quiz 1st Place Cert <i class="fa-solid fa-expand"></i></span></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Tabs Showcase for Professional Credentials -->
+            <div class="container credential-tabs-wrapper">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All Credentials</button>
+                    <button class="filter-btn" data-filter="google">Google Cloud / Coursera</button>
+                    <button class="filter-btn" data-filter="corp">IBM & Infosys</button>
+                    <button class="filter-btn" data-filter="merit">Scholarships & Honors</button>
+                </div>
+
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- SIH 2025 Certificate -->
+                    <div class="gallery-card glass filter-item merit" data-title="Smart India Hackathon 2025 Certificate" data-issuer="Ministry of Education, Govt. of India" data-date="2025" data-link="https://drive.google.com/file/d/11w9xYUmHzcyQQ5IzSv2vAIuI2uDC770b/view?usp=drive_link" data-image="images/Sih_certificate.jpg" data-desc="Official finalist certificate awarded for qualifying as a National Finalist for Smart India Hackathon (SIH) 2025, placing in the Top 2% out of 50,000+ teams.">
+                        <div class="gallery-card-preview">
+                            <img src="images/Sih_certificate.jpg" alt="Smart India Hackathon 2025 Certificate" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview merit-gradient">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div class="gallery-card-badge">SIH Finalist</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>SIH 2025 Finalist Certificate</h3>
+                            <p class="gallery-issuer">Ministry of Education, India</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Google Cloud Big Data ML -->
+                    <div class="gallery-card glass filter-item google" data-title="Google Cloud Big Data and Machine Learning Fundamentals" data-issuer="Google Cloud Skills Boost" data-date="Dec 2023" data-link="https://www.skills.google/public_profiles/9e08d96b-5557-48f3-844d-eba52894741a" data-id="J4MCS6RU3M9U" data-image="images/google Cloud Big Data ML.png" data-desc="Credential validation of understanding Google Cloud core ingestion, storage, and processing tools like BigQuery, Cloud Dataflow, and Vertex AI.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google Cloud Big Data ML.png" alt="Big Data & ML Fundamentals" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+                            <div class="gallery-card-badge">GCP Core</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Big Data & ML Fundamentals</h3>
+                            <p class="gallery-issuer">Google Cloud Skills Boost</p>
+                            <span class="gallery-action-text">Verify Credential <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- IBM Getting Started Enterprise Data Science -->
+                    <div class="gallery-card glass filter-item corp" data-title="Getting Started with Enterprise Data Science" data-issuer="IBM" data-date="Jan 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/ibm-getting started iwth enetrprise.png" data-desc="Certified in foundation models of data science pipelines, analytical workflows, and enterprise data architectures.">
+                        <div class="gallery-card-preview">
+                            <img src="images/ibm-getting started iwth enetrprise.png" alt="Getting Started Enterprise DS" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview corp-gradient">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div class="gallery-card-badge">IBM Core</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Getting Started Enterprise DS</h3>
+                            <p class="gallery-issuer">IBM</p>
+                            <span class="gallery-action-text">Verify Badge <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- IBM Envision Cloud -->
+                    <div class="gallery-card glass filter-item corp" data-title="Journey to Cloud: Envisioning Your Solution" data-issuer="IBM" data-date="Jan 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/ibm=envsion-cloud.png" data-desc="Specialized in cloud migration plans, hybrid deployments, and cloud-native architecture scoping.">
+                        <div class="gallery-card-preview">
+                            <img src="images/ibm=envsion-cloud.png" alt="Journey to Cloud Specialist" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview corp-gradient">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+                            <div class="gallery-card-badge">IBM Cloud</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Journey to Cloud Specialist</h3>
+                            <p class="gallery-issuer">IBM</p>
+                            <span class="gallery-action-text">Verify Badge <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Infosys Springboard Java Foundation -->
+                    <div class="gallery-card glass filter-item corp" data-title="Java Foundation" data-issuer="Infosys Springboard" data-date="2025" data-link="https://drive.google.com/file/d/10aufXOJeZrWzDxRlG-chC98HusFVVebb/view?usp=sharing" data-image="images/Screenshot 2026-06-13 144448.png" data-desc="In-depth assessment validation of core Java syntax, object-oriented concepts, multithreading, collections, and database connectivity.">
+                        <div class="gallery-card-preview">
+                            <img src="images/Screenshot 2026-06-13 144448.png" alt="Java Foundation" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview corp-gradient">
+                                <i class="fa-brands fa-java"></i>
+                            </div>
+                            <div class="gallery-card-badge">Java Core</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Java Foundation</h3>
+                            <p class="gallery-issuer">Infosys Springboard</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- TCS iON Career Edge -->
+                    <div class="gallery-card glass filter-item corp" data-title="TCS iON Career Edge - Young Professional" data-issuer="Tata Consultancy Services" data-date="Jul 2023" data-id="119854-24513338-1016" data-image="images/tcs you ndcareer cert.jpeg" data-desc="Professional certification covering business communication, presentation skills, agile principles, and foundational corporate readiness.">
+                        <div class="gallery-card-preview">
+                            <img src="images/tcs you ndcareer cert.jpeg" alt="TCS iON Career Edge" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview corp-gradient">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div class="gallery-card-badge">TCS iON</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Career Edge - Young Professional</h3>
+                            <p class="gallery-issuer">Tata Consultancy Services</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- PhysicsWallah Data Analytics -->
+                    <div class="gallery-card glass filter-item corp" data-title="PhysicsWallah Data Analytics Certificate" data-issuer="PhysicsWallah" data-date="2024" data-image="images/phywall_data anylytics cert.png" data-desc="Professional certification of core data analytical modeling, statistics, data modeling methodologies, and database querying.">
+                        <div class="gallery-card-preview">
+                            <img src="images/phywall_data anylytics cert.png" alt="PhysicsWallah Data Analytics" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview corp-gradient">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                            <div class="gallery-card-badge">Data Science</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>PhysicsWallah Data Analytics</h3>
+                            <p class="gallery-issuer">PhysicsWallah</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera Advanced Data Analytics -->
+                    <div class="gallery-card glass filter-item google" data-title="Google Advanced Data Analytics Certificate" data-issuer="Google (via Coursera)" data-date="Oct 20, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google advanced datat nayltics.png" data-desc="Professional certificate covering advanced statistical modeling, regression models, Python predictive analysis, and machine learning pipelines.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google advanced datat nayltics.png" alt="Google Advanced Data Analytics" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div class="gallery-card-badge">Specialist</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Advanced Data Analytics</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera AI Essentials -->
+                    <div class="gallery-card glass filter-item google" data-title="Google AI Essentials V1" data-issuer="Google (via Coursera)" data-date="Oct 21, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/ai-eesential_badge (1).png" data-desc="Certified validation of generative AI utilization, prompt engineering principles, AI business integrations, and ethical AI development workflows.">
+                        <div class="gallery-card-preview">
+                            <img src="images/ai-eesential_badge (1).png" alt="Google AI Essentials" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div class="gallery-card-badge">AI Core</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Google AI Essentials</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera Cybersecurity -->
+                    <div class="gallery-card glass filter-item google" data-title="Google Cybersecurity Professional Certificate" data-issuer="Google (via Coursera)" data-date="Oct 21, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google cybersecurty.png" data-desc="In-depth training on network protection protocols, Linux shell automation, SQL databases, Python security scripting, and incident response frameworks.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google cybersecurty.png" alt="Google Cybersecurity Professional" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="gallery-card-badge">Security</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Cybersecurity Professional</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera IT Automation Python -->
+                    <div class="gallery-card glass filter-item google" data-title="Google IT Automation with Python Professional Certificate" data-issuer="Google (via Coursera)" data-date="Apr 12, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google it autmation with pythno badge.png" data-desc="Hands-on training in Python script writing, git version control, operating system automation, and cloud instance config management.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google it autmation with pythno badge.png" alt="IT Automation with Python" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-terminal"></i>
+                            </div>
+                            <div class="gallery-card-badge">Automation</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>IT Automation with Python</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera IT Support Professional -->
+                    <div class="gallery-card glass filter-item google" data-title="Google IT Support Professional Certificate" data-issuer="Google (via Coursera)" data-date="Jul 15, 2023" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google it suppport.png" data-desc="Certified validation of troubleshooting core operating systems, network configuration, systems administration, and IT security concepts.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google it suppport.png" alt="Google IT Support Professional" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <div class="gallery-card-badge">IT Support</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>IT Support Professional</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera Data Analytics -->
+                    <div class="gallery-card glass filter-item google" data-title="Google Data Analytics Professional Certificate" data-issuer="Google (via Coursera)" data-date="Oct 21, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google data analytics.png" data-desc="Comprehensive training in data cleaning, SQL query scripts, Tableau visualizations, and R programming models.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google data analytics.png" alt="Google Data Analytics Professional" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div class="gallery-card-badge">Analytics</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Data Analytics Professional</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera UX Design -->
+                    <div class="gallery-card glass filter-item google" data-title="Google UX Design Professional Certificate" data-issuer="Google (via Coursera)" data-date="Oct 21, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google ui uix.png" data-desc="Comprehensive training in user experience design, wireframing, high-fidelity prototypes, user testing, and UX research.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google ui uix.png" alt="Google UX Design" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <div class="gallery-card-badge">UX Design</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Google UX Design</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera Business Intelligence -->
+                    <div class="gallery-card glass filter-item google" data-title="Google Business Intelligence Certificate" data-issuer="Google (via Coursera)" data-date="Oct 21, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google business intellgence.png" data-desc="Professional certificate validation in dimensional modeling, data warehousing, dashboard design, ETL pipeline creation, and data aggregation scripts.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google business intellgence.png" alt="Google Business Intelligence" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-compass-drafting"></i>
+                            </div>
+                            <div class="gallery-card-badge">BI Analytics</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Google Business Intelligence</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera Project Management -->
+                    <div class="gallery-card glass filter-item google" data-title="Google Project Management Certificate" data-issuer="Google (via Coursera)" data-date="Oct 21, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google prioect management.png" data-desc="Professional training in agile project frameworks, scrum ceremonies, project planning tools, change management protocols, and team communication matrices.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google prioect management.png" alt="Google Project Management" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <div class="gallery-card-badge">Management</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Google Project Management</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Coursera Digital Marketing -->
+                    <div class="gallery-card glass filter-item google" data-title="Google Digital Marketing and E-Commerce Certificate" data-issuer="Google (via Coursera)" data-date="Oct 20, 2024" data-link="https://www.credly.com/users/mohammad.7c0ee9fe" data-image="images/google digital marketung.png" data-desc="Certified credentials covering search engine optimization (SEO), email newsletters campaigns, marketing analytics tools, and e-commerce platforms config.">
+                        <div class="gallery-card-preview">
+                            <img src="images/google digital marketung.png" alt="Digital Marketing & E-Commerce" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview google-gradient">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+                            <div class="gallery-card-badge">Marketing</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Digital Marketing & E-Commerce</h3>
+                            <p class="gallery-issuer">Google (via Coursera)</p>
+                            <span class="gallery-action-text">Verify Certificate <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Academic Scholarship -->
+                    <div class="gallery-card glass filter-item merit" data-title="Tuition Fee Waiver (TFW) & Scholarship" data-issuer="West Bengal State Government" data-date="2022 - 2026" data-image="images/Screenshot 2026-06-13 145014.png" data-desc="Awarded the prestigious State Aikyashree Scholarship and secured a full Tuition Fee Waiver (TFW) seat for continuous academic excellence throughout the B.Tech program.">
+                        <div class="gallery-card-preview">
+                            <img src="images/Screenshot 2026-06-13 145014.png" alt="Tuition Fee Waiver" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview merit-gradient">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div class="gallery-card-badge">Scholarship</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Tuition Fee Waiver (TFW)</h3>
+                            <p class="gallery-issuer">West Bengal State Govt.</p>
+                            <span class="gallery-action-text">Details <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Vice Captain -->
+                    <div class="gallery-card glass filter-item merit" data-title="Appointed House Vice-Captain" data-issuer="S.E. Rly School (EM)" data-date="2019" data-link="https://drive.google.com/file/d/1qcjBXlK3_tO2UBFmYsmldwqdBR9SJYz5/view?usp=sharing" data-image="images/Screenshot 2026-06-13 145030.png" data-desc="Appointed as the House Vice-Captain during school, representing student leadership, sports coordination, and community events administration.">
+                        <div class="gallery-card-preview">
+                            <img src="images/Screenshot 2026-06-13 145030.png" alt="House Vice-Captain" class="gallery-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery-card-fallback-preview merit-gradient">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="gallery-card-badge">Leadership</div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>House Vice-Captain</h3>
+                            <p class="gallery-issuer">S.E. Rly School (EM)</p>
+                            <span class="gallery-action-text">Verify Badge <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-panel glass">
+                        <div class="card-glow"></div>
+                        <h3>Let's Collaborate</h3>
+                        <p>I am actively seeking software engineering roles, intern opportunities, and innovative systems development contracts. Send a message or reach out directly.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method-item">
+                                <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="details">
+                                    <span class="label">Email Me</span>
+                                    <a href="mailto:mohammad.worklife@gmail.com" class="value">mohammad.worklife@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method-item">
+                                <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                                <div class="details">
+                                    <span class="label">Call Me</span>
+                                    <span class="value">+91 9547764638</span>
+                                </div>
+                            </div>
+                            <div class="contact-method-item">
+                                <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="details">
+                                    <span class="label">Location</span>
+                                    <span class="value">Kharagpur, West Bengal, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulator Form -->
+                    <form id="contact-form" class="contact-form glass">
+                        <div class="card-glow"></div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required placeholder="Collaboration Inquiry">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                        <div id="form-feedback" class="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 Mohammad. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/itssmdsh" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/itsmdsh/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://leetcode.com/u/its_mdsh/" target="_blank"><i class="fa-solid fa-code"></i> LeetCode</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Certificates -->
+    <div id="gallery-modal" class="modal-overlay">
+        <div class="modal-card glass">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-media">
+                    <img id="modal-image" src="" alt="Certificate Display">
+                    <div class="modal-media-fallback" id="modal-media-fallback">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Click 'Verify Credential' to check proof online!</span>
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h3 id="modal-title">Certificate Title</h3>
+                    <p class="modal-issuer-row">Issued by: <strong id="modal-issuer">Issuer Name</strong></p>
+                    <p class="modal-date-row">Date: <span id="modal-date">Date</span></p>
+                    <p id="modal-cred-id" class="modal-id-row">Credential ID: <span></span></p>
+                    <p id="modal-description">Detailed description of the certificate, badges earned, and technical skills validated.</p>
+                    <div class="modal-actions">
+                        <a href="" id="modal-verify-btn" target="_blank" class="btn btn-primary">Verify Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
