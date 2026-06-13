@@ -314,9 +314,9 @@ section {
 }
 
 .hero-flag-img {
-    height: 48px;
+    height: 60px;
     width: auto;
-    margin-left: 8px;
+    margin-left: 2px;
     vertical-align: middle;
     display: inline-block;
     filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.25)) drop-shadow(0 0 10px rgba(0, 128, 0, 0.25));
