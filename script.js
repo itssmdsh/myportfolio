@@ -635,7 +635,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const endDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         
         const startDate = new Date(endDate);
-        startDate.setDate(startDate.getDate() - 364);
+        // Limit rendering to the last 90 days (approx. 3 months)
+        startDate.setDate(startDate.getDate() - 90);
         
         // Find nearest preceding Sunday
         while (startDate.getDay() !== 0) {
@@ -662,6 +663,10 @@ document.addEventListener('DOMContentLoaded', () => {
             weeks.push(currentWeek);
         }
         
+        // Set columns count CSS variable dynamically
+        gridContainer.style.setProperty('--columns', weeks.length);
+        monthsHeader.style.setProperty('--columns', weeks.length);
+        
         // Month names header
         let lastMonth = -1;
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -671,7 +676,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (firstDay) {
                 const currentMonth = firstDay.getMonth();
                 if (currentMonth !== lastMonth) {
-                    if (weekIndex < 52) {
+                    if (weekIndex < weeks.length - 1) {
                         const monthLabel = document.createElement('span');
                         monthLabel.textContent = monthNames[currentMonth];
                         monthLabel.style.gridColumnStart = weekIndex + 1;
@@ -720,9 +725,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalLabel = document.getElementById(`${type}-contrib-count`);
         if (totalLabel) {
             if (type === 'github') {
-                totalLabel.textContent = `${totalCount.toLocaleString()} contributions in the last year`;
+                totalLabel.textContent = `${totalCount.toLocaleString()} contributions in the last 3 months`;
             } else {
-                totalLabel.textContent = `${totalCount.toLocaleString()} submissions in the last year`;
+                totalLabel.textContent = `${totalCount.toLocaleString()} submissions in the last 3 months`;
             }
         }
     }

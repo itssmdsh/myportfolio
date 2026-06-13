@@ -2145,7 +2145,7 @@ section {
 
 .contrib-calendar-header {
     display: grid;
-    grid-template-columns: repeat(53, 9px);
+    grid-template-columns: repeat(var(--columns, 13), 9px);
     gap: 3px;
     font-size: 8px;
     color: var(--text-secondary);
