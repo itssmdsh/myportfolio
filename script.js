@@ -726,4 +726,69 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // --- 11. CREATIVE CORNER WRITING SLIDER ---
+    const slides = document.querySelectorAll('.writing-slide');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+    const prevBtn = document.getElementById('writing-prev');
+    const nextBtn = document.getElementById('writing-next');
+    let currentSlideIndex = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        if (slides.length === 0) return;
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+
+        currentSlideIndex = (index + slides.length) % slides.length;
+        slides[currentSlideIndex].classList.add('active');
+        if (dots[currentSlideIndex]) {
+            dots[currentSlideIndex].classList.add('active');
+        }
+    }
+
+    function nextSlide() {
+        showSlide(currentSlideIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlideIndex - 1);
+    }
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetSlideInterval();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetSlideInterval();
+        });
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            const index = parseInt(e.target.getAttribute('data-index'));
+            showSlide(index);
+            resetSlideInterval();
+        });
+    });
+
+    function startSlideInterval() {
+        slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+    }
+
+    function resetSlideInterval() {
+        clearInterval(slideInterval);
+        startSlideInterval();
+    }
+
+    if (slides.length > 0) {
+        startSlideInterval();
+    }
 });
