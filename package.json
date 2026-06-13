@@ -1,0 +1,12 @@
+{
+  "name": "myportfolio",
+  "version": "1.0.0",
+  "description": "Mohammad's Developer Portfolio",
+  "main": "index.html",
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

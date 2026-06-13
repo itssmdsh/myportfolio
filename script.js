@@ -584,41 +584,59 @@ document.addEventListener('DOMContentLoaded', () => {
     const formFeedback = document.getElementById('form-feedback');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
-            
-            // Loading State
+
+            const name    = document.getElementById('name').value.trim();
+            const email   = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Loading state
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending Message <i class="fa-solid fa-spinner fa-spin"></i>';
+            submitBtn.innerHTML = 'Sending <i class="fa-solid fa-spinner fa-spin"></i>';
             formFeedback.className = 'form-feedback';
             formFeedback.textContent = '';
-            
-            // Simulate API request delay
-            setTimeout(() => {
+
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, subject, message }),
+                });
+
+                const data = await response.json();
+
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
-                
-                // Success output
-                formFeedback.classList.add('success');
-                formFeedback.textContent = 'Success! Your simulated message has been processed successfully. Thanks!';
-                
-                // Clear inputs
-                contactForm.reset();
-                
-                // Clear success message after 5 seconds
+
+                if (response.ok && data.success) {
+                    formFeedback.classList.add('success');
+                    formFeedback.textContent = '✅ Message sent! I\'ll get back to you soon. Thanks for reaching out!';
+                    contactForm.reset();
+                } else {
+                    formFeedback.classList.add('error');
+                    formFeedback.textContent = `❌ ${data.error || 'Something went wrong. Please try again.'}`;
+                }
+            } catch (err) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                formFeedback.classList.add('error');
+                formFeedback.textContent = '❌ Network error. Please check your connection and try again.';
+            }
+
+            // Auto-clear feedback after 8 seconds
+            setTimeout(() => {
+                formFeedback.style.opacity = '0';
                 setTimeout(() => {
-                    formFeedback.style.opacity = '0';
-                    setTimeout(() => {
-                        formFeedback.textContent = '';
-                        formFeedback.style.opacity = '1';
-                        formFeedback.className = 'form-feedback';
-                    }, 500);
-                }, 5000);
-                
-            }, 1200);
+                    formFeedback.textContent = '';
+                    formFeedback.style.opacity = '1';
+                    formFeedback.className = 'form-feedback';
+                }, 500);
+            }, 8000);
         });
     }
 
