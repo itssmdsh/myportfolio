@@ -1,6 +1,6 @@
-# Mohammad | Software Engineer & AI Specialist Portfolio
+# Mohammad | Aspiring Software Engineer Portfolio
 
-A premium, interactive, and responsive developer portfolio showcasing technical expertise in Java, Python, Spring Boot, FastAPI, Machine Learning, Cloud Development, and AI. Fully optimized with dark mode by default, dynamic API integrations, and visual assets.
+A premium, interactive, and responsive developer portfolio showcasing technical expertise in Java, Python, Spring Boot, FastAPI, Cloud Development, and hands-on AI application development. Fully optimized with dark mode by default, dynamic API integrations, and visual assets.
 
 ---
 
