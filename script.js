@@ -635,8 +635,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const endDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         
         const startDate = new Date(endDate);
-        // Limit rendering to the last 90 days (approx. 3 months)
-        startDate.setDate(startDate.getDate() - 90);
+        // Limit rendering to the last 60 days (approx. 2 months)
+        startDate.setDate(startDate.getDate() - 60);
         
         // Find nearest preceding Sunday
         while (startDate.getDay() !== 0) {
@@ -725,9 +725,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalLabel = document.getElementById(`${type}-contrib-count`);
         if (totalLabel) {
             if (type === 'github') {
-                totalLabel.textContent = `${totalCount.toLocaleString()} contributions in the last 3 months`;
+                totalLabel.textContent = `${totalCount.toLocaleString()} contributions in the last 2 months`;
             } else {
-                totalLabel.textContent = `${totalCount.toLocaleString()} submissions in the last 3 months`;
+                totalLabel.textContent = `${totalCount.toLocaleString()} submissions in the last 2 months`;
             }
         }
     }
