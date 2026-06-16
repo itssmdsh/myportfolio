@@ -310,7 +310,7 @@ section {
     margin-left: 4px;
     vertical-align: middle;
     display: inline-block;
-    clip-path: inset(1.7% 6.2% 3% 0);
+    clip-path: inset(2.7% 6.2% 3% 0);
 }
 
 .hero-flag-img {
@@ -320,7 +320,7 @@ section {
     vertical-align: middle;
     display: inline-block;
     filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.25)) drop-shadow(0 0 10px rgba(0, 128, 0, 0.25));
-    clip-path: inset(1.7% 6.2% 3% 0);
+    clip-path: inset(2.7% 6.2% 3% 0);
 }
 
 @keyframes flagWiggle {
