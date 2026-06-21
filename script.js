@@ -881,85 +881,113 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const balancePairsKeys = Object.keys(balancePairsData);
+    let currentBalanceIndex = 0;
+    let balanceAutoplayInterval = null;
+
+    function updateActiveBalance(pairKey, cardElement) {
+        const data = balancePairsData[pairKey];
+        if (!data) return;
+
+        // Remove active class from all control cards
+        controlCards.forEach(c => c.classList.remove('active'));
+        // Add active class to active card
+        if (cardElement) cardElement.classList.add('active');
+
+        // Apply tilt rotation to SVG beam and counter-rotation to pans
+        if (beamGroup) beamGroup.style.transform = `rotate(${data.tilt}deg)`;
+        if (panLeftGroup) panLeftGroup.style.transform = `rotate(${-data.tilt}deg)`;
+        if (panRightGroup) panRightGroup.style.transform = `rotate(${-data.tilt}deg)`;
+
+        // Update text on left and right pans
+        if (cardLeft) {
+            cardLeft.innerHTML = `<i class="fa-solid ${data.leftIcon} scale-card-icon"></i> <span class="scale-card-text">${data.leftText}</span>`;
+            if (data.heavier === 'left') {
+                cardLeft.classList.add('active', 'cyan-theme');
+            } else {
+                cardLeft.classList.remove('active', 'cyan-theme');
+            }
+        }
+
+        if (cardRight) {
+            cardRight.innerHTML = `<i class="fa-solid ${data.rightIcon} scale-card-icon"></i> <span class="scale-card-text">${data.rightText}</span>`;
+            if (data.heavier === 'right') {
+                cardRight.classList.add('active');
+            } else {
+                cardRight.classList.remove('active');
+            }
+        }
+
+        // Update weight visibility
+        if (weightLeft) {
+            if (data.heavier === 'left') {
+                weightLeft.classList.add('active');
+            } else {
+                weightLeft.classList.remove('active');
+            }
+        }
+
+        if (weightRight) {
+            if (data.heavier === 'right') {
+                weightRight.classList.add('active');
+            } else {
+                weightRight.classList.remove('active');
+            }
+        }
+
+        // Fade and update explanation card
+        const expElements = [expTitle, expDesc, expIcon];
+        expElements.forEach(el => {
+            if (el) el.classList.add('balance-fade-out');
+        });
+
+        setTimeout(() => {
+            if (expTitle) expTitle.textContent = data.expTitle;
+            if (expDesc) expDesc.textContent = data.expDesc;
+            if (expIcon) {
+                if (data.heavier === 'left') {
+                    expIcon.className = `fa-solid ${data.leftIcon}`;
+                    expIcon.style.color = 'var(--accent-cyan)';
+                } else {
+                    expIcon.className = `fa-solid ${data.rightIcon}`;
+                    expIcon.style.color = 'var(--accent-purple)';
+                }
+            }
+
+            expElements.forEach(el => {
+                if (el) {
+                    el.classList.remove('balance-fade-out');
+                    el.classList.add('balance-fade-in');
+                    setTimeout(() => el.classList.remove('balance-fade-in'), 400);
+                }
+            });
+        }, 250);
+    }
+
+    function startBalanceAutoplay() {
+        if (balanceAutoplayInterval) return;
+        balanceAutoplayInterval = setInterval(() => {
+            currentBalanceIndex = (currentBalanceIndex + 1) % balancePairsKeys.length;
+            const nextKey = balancePairsKeys[currentBalanceIndex];
+            const nextCard = document.querySelector(`.control-card[data-pair="${nextKey}"]`);
+            updateActiveBalance(nextKey, nextCard);
+        }, 6000); // Change tradeoff every 6 seconds
+    }
+
+    function stopBalanceAutoplay() {
+        if (balanceAutoplayInterval) {
+            clearInterval(balanceAutoplayInterval);
+            balanceAutoplayInterval = null;
+        }
+    }
+
+    // Set up manual click handlers
     controlCards.forEach(card => {
         card.addEventListener('click', () => {
+            stopBalanceAutoplay(); // User interacted, stop automatic cycling
             const pairKey = card.getAttribute('data-pair');
-            const data = balancePairsData[pairKey];
-            if (!data) return;
-
-            // Remove active class from all control cards
-            controlCards.forEach(c => c.classList.remove('active'));
-            // Add active class to clicked card
-            card.classList.add('active');
-
-            // Apply tilt rotation to SVG beam and counter-rotation to pans
-            if (beamGroup) beamGroup.style.transform = `rotate(${data.tilt}deg)`;
-            if (panLeftGroup) panLeftGroup.style.transform = `rotate(${-data.tilt}deg)`;
-            if (panRightGroup) panRightGroup.style.transform = `rotate(${-data.tilt}deg)`;
-
-            // Update text on left and right pans
-            if (cardLeft) {
-                cardLeft.innerHTML = `<i class="fa-solid ${data.leftIcon} scale-card-icon"></i> <span class="scale-card-text">${data.leftText}</span>`;
-                if (data.heavier === 'left') {
-                    cardLeft.classList.add('active', 'cyan-theme');
-                } else {
-                    cardLeft.classList.remove('active', 'cyan-theme');
-                }
-            }
-
-            if (cardRight) {
-                cardRight.innerHTML = `<i class="fa-solid ${data.rightIcon} scale-card-icon"></i> <span class="scale-card-text">${data.rightText}</span>`;
-                if (data.heavier === 'right') {
-                    cardRight.classList.add('active');
-                } else {
-                    cardRight.classList.remove('active');
-                }
-            }
-
-            // Update weight visibility
-            if (weightLeft) {
-                if (data.heavier === 'left') {
-                    weightLeft.classList.add('active');
-                } else {
-                    weightLeft.classList.remove('active');
-                }
-            }
-
-            if (weightRight) {
-                if (data.heavier === 'right') {
-                    weightRight.classList.add('active');
-                } else {
-                    weightRight.classList.remove('active');
-                }
-            }
-
-            // Fade and update explanation card
-            const expElements = [expTitle, expDesc, expIcon];
-            expElements.forEach(el => {
-                if (el) el.classList.add('balance-fade-out');
-            });
-
-            setTimeout(() => {
-                if (expTitle) expTitle.textContent = data.expTitle;
-                if (expDesc) expDesc.textContent = data.expDesc;
-                if (expIcon) {
-                    if (data.heavier === 'left') {
-                        expIcon.className = `fa-solid ${data.leftIcon}`;
-                        expIcon.style.color = 'var(--accent-cyan)';
-                    } else {
-                        expIcon.className = `fa-solid ${data.rightIcon}`;
-                        expIcon.style.color = 'var(--accent-purple)';
-                    }
-                }
-
-                expElements.forEach(el => {
-                    if (el) {
-                        el.classList.remove('balance-fade-out');
-                        el.classList.add('balance-fade-in');
-                        setTimeout(() => el.classList.remove('balance-fade-in'), 400);
-                    }
-                });
-            }, 250);
+            currentBalanceIndex = balancePairsKeys.indexOf(pairKey);
+            updateActiveBalance(pairKey, card);
         });
     });
 
@@ -973,4 +1001,9 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.setProperty('--mouse-y', `${y}px`);
         });
     });
+
+    // Start autoplay on load
+    if (controlCards.length > 0) {
+        startBalanceAutoplay();
+    }
 });
