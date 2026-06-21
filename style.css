@@ -2915,3 +2915,404 @@ section {
         font-size: 0.85rem;
     }
 }
+
+/* =========================================================================
+   12. CORE PRINCIPLES & BALANCES SECTION
+   ========================================================================= */
+.balances-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.balances-container {
+    position: relative;
+    border-radius: 20px;
+    padding: 50px;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.balances-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* --- Controls Side --- */
+.balances-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.control-card {
+    position: relative;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    cursor: pointer;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.control-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.05), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.control-card:hover .control-card-glow {
+    opacity: 1;
+}
+
+.control-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-2px);
+}
+
+.control-card.active {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-purple);
+    box-shadow: 0 8px 24px -10px var(--accent-purple-glow);
+}
+
+/* Left-heavy styling when active card holds left bias */
+.control-card.active[data-pair="ethics-profit"] {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 8px 24px -10px var(--accent-cyan-glow);
+}
+
+.control-pair-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.progress-bar-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    gap: 12px;
+}
+
+.progress-bar-preview span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition-smooth);
+}
+
+.progress-bar-preview .text-highlight {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.control-card.active .progress-bar-preview .text-highlight {
+    color: var(--accent-purple);
+}
+
+.control-card.active[data-pair="ethics-profit"] .progress-bar-preview .text-highlight {
+    color: var(--accent-cyan);
+}
+
+.progress-bar-preview .bar {
+    flex-grow: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-preview .bar-fill {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 65%;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.progress-bar-preview .bar-fill.right-heavy {
+    right: 0;
+}
+
+.progress-bar-preview .bar-fill.left-heavy {
+    left: 0;
+}
+
+.control-card.active .progress-bar-preview .bar-fill {
+    background: var(--accent-purple);
+}
+
+.control-card.active[data-pair="ethics-profit"] .progress-bar-preview .bar-fill {
+    background: var(--accent-cyan);
+}
+
+/* --- Display Side --- */
+.balance-display-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+}
+
+.balance-visual-box {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.balance-scale-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Scale styling */
+.scale-pillar {
+    fill: var(--card-border);
+}
+
+.scale-beam {
+    fill: var(--text-secondary);
+}
+
+.scale-needle {
+    transform-origin: 200px 80px;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Custom styles for the HTML content inside foreignObject */
+.scale-card-html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 16, 24, 0.8);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+.scale-card-icon {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: var(--transition-smooth);
+}
+
+.scale-card-html.active {
+    color: var(--text-primary);
+    font-weight: 600;
+    background: rgba(139, 92, 246, 0.15);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 12px var(--accent-purple-glow);
+}
+
+.scale-card-html.active.cyan-theme {
+    background: rgba(6, 182, 212, 0.15);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 12px var(--accent-cyan-glow);
+}
+
+.scale-card-html.active .scale-card-icon {
+    color: var(--accent-purple);
+}
+
+.scale-card-html.active.cyan-theme .scale-card-icon {
+    color: var(--accent-cyan);
+}
+
+/* Weight blocks */
+.scale-weight {
+    opacity: 0.15;
+    transform: scale(0.6);
+    fill: var(--text-secondary);
+}
+
+.scale-weight.active {
+    opacity: 1;
+    transform: scale(1.1);
+    fill: var(--gold);
+}
+
+/* Explanation Card */
+.balance-explanation-card {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    transition: var(--transition-smooth);
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.explanation-icon-wrapper {
+    font-size: 1.8rem;
+    color: var(--accent-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    transition: var(--transition-smooth);
+}
+
+.explanation-text-content {
+    flex-grow: 1;
+}
+
+.explanation-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    transition: var(--transition-smooth);
+}
+
+.explanation-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+    transition: var(--transition-smooth);
+}
+
+/* Animation classes */
+.balance-fade-out {
+    opacity: 0;
+    transform: translateY(4px);
+}
+
+.balance-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .balances-container {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    box-shadow: var(--shadow-premium);
+}
+
+[data-theme="light"] .control-card {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+[data-theme="light"] .control-card:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .control-card.active {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .progress-bar-preview .bar {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .progress-bar-preview .bar-fill {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .scale-card-html {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .scale-card-html.active {
+    background: rgba(99, 102, 241, 0.08);
+}
+
+[data-theme="light"] .scale-card-html.active.cyan-theme {
+    background: rgba(14, 165, 233, 0.08);
+}
+
+[data-theme="light"] .balance-explanation-card {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+/* =========================================================================
+   MOBILE RESPONSIVENESS FOR BALANCES SECTION
+   ========================================================================= */
+@media (max-width: 900px) {
+    .balances-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .balances-container {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .balances-controls {
+        gap: 10px;
+    }
+    
+    .control-card {
+        padding: 12px 16px;
+    }
+    
+    .control-pair-title {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    .balance-visual-box {
+        height: 250px;
+    }
+    
+    .balance-explanation-card {
+        padding: 16px;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .explanation-icon-wrapper {
+        height: auto;
+    }
+}

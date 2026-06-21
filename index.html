@@ -43,6 +43,7 @@
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#credentials" class="nav-link">Credentials</a>
                 <a href="#creative-corner" class="nav-link">Creative</a>
+                <a href="#balances" class="nav-link">Balances</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
@@ -1221,6 +1222,151 @@
                             <button class="slider-btn next-btn" id="writing-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Balances Section -->
+        <section id="balances" class="balances-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Trade-offs & Values</span>
+                    <h2 class="section-title">Principles in Balance</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="balances-container glass">
+                    <div class="card-glow"></div>
+                    
+                    <div class="balances-layout">
+                        <!-- Left Panel: Control cards -->
+                        <div class="balances-controls">
+                            <div class="control-card active" data-pair="chaos-stability">
+                                <div class="control-card-glow"></div>
+                                <span class="control-pair-title">Chaos vs Stability</span>
+                                <div class="progress-bar-preview">
+                                    <span class="left-term"><i class="fa-solid fa-tornado"></i> Chaos</span>
+                                    <div class="bar"><span class="bar-fill right-heavy"></span></div>
+                                    <span class="right-term text-highlight"><i class="fa-solid fa-anchor"></i> Stability</span>
+                                </div>
+                            </div>
+                            <div class="control-card" data-pair="innovation-reliability">
+                                <div class="control-card-glow"></div>
+                                <span class="control-pair-title">Innovation vs Reliability</span>
+                                <div class="progress-bar-preview">
+                                    <span class="left-term"><i class="fa-solid fa-rocket"></i> Innovation</span>
+                                    <div class="bar"><span class="bar-fill right-heavy"></span></div>
+                                    <span class="right-term text-highlight"><i class="fa-solid fa-shield-halved"></i> Reliability</span>
+                                </div>
+                            </div>
+                            <div class="control-card" data-pair="exploration-optimization">
+                                <div class="control-card-glow"></div>
+                                <span class="control-pair-title">Exploration vs Optimization</span>
+                                <div class="progress-bar-preview">
+                                    <span class="left-term"><i class="fa-solid fa-compass"></i> Exploration</span>
+                                    <div class="bar"><span class="bar-fill right-heavy"></span></div>
+                                    <span class="right-term text-highlight"><i class="fa-solid fa-gauge-high"></i> Optimization</span>
+                                </div>
+                            </div>
+                            <div class="control-card" data-pair="ethics-profit">
+                                <div class="control-card-glow"></div>
+                                <span class="control-pair-title">Ethics vs Profit</span>
+                                <div class="progress-bar-preview">
+                                    <span class="left-term text-highlight"><i class="fa-solid fa-scale-balanced"></i> Ethics</span>
+                                    <div class="bar"><span class="bar-fill left-heavy"></span></div>
+                                    <span class="right-term"><i class="fa-solid fa-sack-dollar"></i> Profit</span>
+                                </div>
+                            </div>
+                            <div class="control-card" data-pair="freedom-responsibility">
+                                <div class="control-card-glow"></div>
+                                <span class="control-pair-title">Freedom vs Responsibility</span>
+                                <div class="progress-bar-preview">
+                                    <span class="left-term"><i class="fa-solid fa-dove"></i> Freedom</span>
+                                    <div class="bar"><span class="bar-fill right-heavy"></span></div>
+                                    <span class="right-term text-highlight"><i class="fa-solid fa-user-shield"></i> Responsibility</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Physical scale display -->
+                        <div class="balance-display-container">
+                            <div class="balance-visual-box">
+                                <svg class="balance-scale-svg" viewBox="0 0 400 300" width="100%" height="100%">
+                                    <!-- Stand Base -->
+                                    <path class="scale-base" d="M140 280 L260 280 L240 265 L160 265 Z" fill="var(--text-secondary)" opacity="0.25"></path>
+                                    <!-- Pillar -->
+                                    <rect class="scale-pillar" x="194" y="80" width="12" height="185" rx="4" fill="var(--card-border)"></rect>
+                                    <!-- Joint / Center Hub -->
+                                    <circle class="scale-hub" cx="200" cy="80" r="10" fill="var(--accent-purple)"></circle>
+                                    <circle class="scale-center-pin" cx="200" cy="80" r="4" fill="var(--bg-primary)"></circle>
+                                    
+                                    <!-- Rotating Group (Beam and Needle) -->
+                                    <g class="scale-beam-group" style="transform-origin: 200px 80px; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);">
+                                        <!-- Main Beam -->
+                                        <rect class="scale-beam" x="40" y="77" width="320" height="6" rx="3" fill="var(--text-primary)"></rect>
+                                        <!-- Balance Needle -->
+                                        <polygon class="scale-needle" points="200,80 198,35 202,35" fill="var(--accent-purple)"></polygon>
+                                        
+                                        <!-- Left Hanger Point -->
+                                        <circle cx="50" cy="80" r="4" fill="var(--text-secondary)"></circle>
+                                        <!-- Right Hanger Point -->
+                                        <circle cx="350" cy="80" r="4" fill="var(--text-secondary)"></circle>
+                                        
+                                        <!-- Hanging Pan Left Group -->
+                                        <g class="scale-pan-left-group" style="transform-origin: 50px 80px; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);">
+                                            <!-- Chains -->
+                                            <line x1="50" y1="80" x2="15" y2="180" stroke="var(--text-secondary)" stroke-width="1.5" opacity="0.6"></line>
+                                            <line x1="50" y1="80" x2="85" y2="180" stroke="var(--text-secondary)" stroke-width="1.5" opacity="0.6"></line>
+                                            <!-- Pan Plate -->
+                                            <path class="scale-pan" d="M5 180 L95 180 C90 195, 10 195, 5 180 Z" fill="var(--card-bg)" stroke="var(--card-border)" stroke-width="1.5"></path>
+                                            <!-- HTML Card content -->
+                                            <foreignObject x="0" y="132" width="100" height="38">
+                                                <div class="scale-card-html" id="scale-card-left">
+                                                    <i class="fa-solid fa-tornado scale-card-icon"></i>
+                                                    <span class="scale-card-text">Chaos</span>
+                                                </div>
+                                            </foreignObject>
+                                            <!-- Brass Weight -->
+                                            <g class="scale-weight" id="scale-weight-left" style="transform-origin: 50px 180px; transition: var(--transition-smooth);">
+                                                <path d="M42 180 L58 180 L55 168 L45 168 Z" fill="var(--gold)"></path>
+                                                <circle cx="50" cy="164" r="3" fill="none" stroke="var(--gold)" stroke-width="1.5"></circle>
+                                            </g>
+                                        </g>
+
+                                        <!-- Hanging Pan Right Group -->
+                                        <g class="scale-pan-right-group" style="transform-origin: 350px 80px; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);">
+                                            <!-- Chains -->
+                                            <line x1="350" y1="80" x2="315" y2="180" stroke="var(--text-secondary)" stroke-width="1.5" opacity="0.6"></line>
+                                            <line x1="350" y1="80" x2="385" y2="180" stroke="var(--text-secondary)" stroke-width="1.5" opacity="0.6"></line>
+                                            <!-- Pan Plate -->
+                                            <path class="scale-pan" d="M305 180 L395 180 C390 195, 310 195, 305 180 Z" fill="var(--card-bg)" stroke="var(--card-border)" stroke-width="1.5"></path>
+                                            <!-- HTML Card content -->
+                                            <foreignObject x="300" y="132" width="100" height="38">
+                                                <div class="scale-card-html active" id="scale-card-right">
+                                                    <i class="fa-solid fa-anchor scale-card-icon"></i>
+                                                    <span class="scale-card-text">Stability</span>
+                                                </div>
+                                            </foreignObject>
+                                            <!-- Brass Weight -->
+                                            <g class="scale-weight active" id="scale-weight-right" style="transform-origin: 350px 180px; transition: var(--transition-smooth);">
+                                                <path d="M342 180 L358 180 L355 168 L345 168 Z" fill="var(--gold)"></path>
+                                                <circle cx="350" cy="164" r="3" fill="none" stroke="var(--gold)" stroke-width="1.5"></circle>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <!-- Explanatory Card -->
+                            <div class="balance-explanation-card">
+                                <div class="explanation-icon-wrapper"><i class="fa-solid fa-scale-unbalanced-flip"></i></div>
+                                <div class="explanation-text-content">
+                                    <h4 class="explanation-title" id="balance-exp-title">Stability Secures Legacy</h4>
+                                    <p class="explanation-desc" id="balance-exp-desc">Chaos can spark ideas, but only stability builds legacy. I value structured, predictable systems and a calm, clear mind over erratic bursts.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

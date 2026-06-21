@@ -814,4 +814,163 @@ document.addEventListener('DOMContentLoaded', () => {
     if (slides.length > 0) {
         startSlideInterval();
     }
+
+    // --- 12. CORE BALANCES INTERACTIVE SCALE ---
+    const controlCards = document.querySelectorAll('.control-card');
+    const beamGroup = document.querySelector('.scale-beam-group');
+    const panLeftGroup = document.querySelector('.scale-pan-left-group');
+    const panRightGroup = document.querySelector('.scale-pan-right-group');
+    const cardLeft = document.getElementById('scale-card-left');
+    const cardRight = document.getElementById('scale-card-right');
+    const weightLeft = document.getElementById('scale-weight-left');
+    const weightRight = document.getElementById('scale-weight-right');
+    const expTitle = document.getElementById('balance-exp-title');
+    const expDesc = document.getElementById('balance-exp-desc');
+    const expIcon = document.querySelector('.explanation-icon-wrapper i');
+
+    const balancePairsData = {
+        'chaos-stability': {
+            leftText: 'Chaos',
+            leftIcon: 'fa-tornado',
+            rightText: 'Stability',
+            rightIcon: 'fa-anchor',
+            heavier: 'right',
+            tilt: 10,
+            expTitle: 'Stability Secures Legacy',
+            expDesc: 'Chaos can spark ideas, but only stability builds legacy. I value structured, predictable systems and a calm, clear mind over erratic bursts.'
+        },
+        'innovation-reliability': {
+            leftText: 'Innovation',
+            leftIcon: 'fa-rocket',
+            rightText: 'Reliability',
+            rightIcon: 'fa-shield-halved',
+            heavier: 'right',
+            tilt: 10,
+            expTitle: 'Reliability is the Foundation',
+            expDesc: 'Novelty is exciting, but uptime is critical. I build systems where reliability is the core feature, not an afterthought.'
+        },
+        'exploration-optimization': {
+            leftText: 'Exploration',
+            leftIcon: 'fa-compass',
+            rightText: 'Optimization',
+            rightIcon: 'fa-gauge-high',
+            heavier: 'right',
+            tilt: 10,
+            expTitle: 'Optimization Drives Impact',
+            expDesc: 'While exploring new tech is fun, mastering and optimizing what works brings true engineering value. I focus on squeeze-every-millisecond performance.'
+        },
+        'ethics-profit': {
+            leftText: 'Ethics',
+            leftIcon: 'fa-scale-balanced',
+            rightText: 'Profit',
+            rightIcon: 'fa-sack-dollar',
+            heavier: 'left',
+            tilt: -10,
+            expTitle: 'Ethics Guides Code',
+            expDesc: 'Code is a tool to improve human lives. Ethical responsibility and social impact must always outweigh short-term monetary gains.'
+        },
+        'freedom-responsibility': {
+            leftText: 'Freedom',
+            leftIcon: 'fa-dove',
+            rightText: 'Responsibility',
+            rightIcon: 'fa-user-shield',
+            heavier: 'right',
+            tilt: 10,
+            expTitle: 'Responsibility Earns Autonomy',
+            expDesc: 'With autonomy comes accountability. I believe true freedom is earned through holding ourselves responsible for our code, our teams, and our commitments.'
+        }
+    };
+
+    controlCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const pairKey = card.getAttribute('data-pair');
+            const data = balancePairsData[pairKey];
+            if (!data) return;
+
+            // Remove active class from all control cards
+            controlCards.forEach(c => c.classList.remove('active'));
+            // Add active class to clicked card
+            card.classList.add('active');
+
+            // Apply tilt rotation to SVG beam and counter-rotation to pans
+            if (beamGroup) beamGroup.style.transform = `rotate(${data.tilt}deg)`;
+            if (panLeftGroup) panLeftGroup.style.transform = `rotate(${-data.tilt}deg)`;
+            if (panRightGroup) panRightGroup.style.transform = `rotate(${-data.tilt}deg)`;
+
+            // Update text on left and right pans
+            if (cardLeft) {
+                cardLeft.innerHTML = `<i class="fa-solid ${data.leftIcon} scale-card-icon"></i> <span class="scale-card-text">${data.leftText}</span>`;
+                if (data.heavier === 'left') {
+                    cardLeft.classList.add('active', 'cyan-theme');
+                } else {
+                    cardLeft.classList.remove('active', 'cyan-theme');
+                }
+            }
+
+            if (cardRight) {
+                cardRight.innerHTML = `<i class="fa-solid ${data.rightIcon} scale-card-icon"></i> <span class="scale-card-text">${data.rightText}</span>`;
+                if (data.heavier === 'right') {
+                    cardRight.classList.add('active');
+                } else {
+                    cardRight.classList.remove('active');
+                }
+            }
+
+            // Update weight visibility
+            if (weightLeft) {
+                if (data.heavier === 'left') {
+                    weightLeft.classList.add('active');
+                } else {
+                    weightLeft.classList.remove('active');
+                }
+            }
+
+            if (weightRight) {
+                if (data.heavier === 'right') {
+                    weightRight.classList.add('active');
+                } else {
+                    weightRight.classList.remove('active');
+                }
+            }
+
+            // Fade and update explanation card
+            const expElements = [expTitle, expDesc, expIcon];
+            expElements.forEach(el => {
+                if (el) el.classList.add('balance-fade-out');
+            });
+
+            setTimeout(() => {
+                if (expTitle) expTitle.textContent = data.expTitle;
+                if (expDesc) expDesc.textContent = data.expDesc;
+                if (expIcon) {
+                    if (data.heavier === 'left') {
+                        expIcon.className = `fa-solid ${data.leftIcon}`;
+                        expIcon.style.color = 'var(--accent-cyan)';
+                    } else {
+                        expIcon.className = `fa-solid ${data.rightIcon}`;
+                        expIcon.style.color = 'var(--accent-purple)';
+                    }
+                }
+
+                expElements.forEach(el => {
+                    if (el) {
+                        el.classList.remove('balance-fade-out');
+                        el.classList.add('balance-fade-in');
+                        setTimeout(() => el.classList.remove('balance-fade-in'), 400);
+                    }
+                });
+            }, 250);
+        });
+    });
+
+    // Hover effect for mouse glow
+    controlCards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
 });
