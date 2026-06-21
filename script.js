@@ -884,94 +884,111 @@ document.addEventListener('DOMContentLoaded', () => {
     const balancePairsKeys = Object.keys(balancePairsData);
     let currentBalanceIndex = 0;
     let balanceAutoplayInterval = null;
+    let isTransitioning = false;
 
-    function updateActiveBalance(pairKey, cardElement) {
+    function runWeighingCycle(pairKey, cardElement) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
         const data = balancePairsData[pairKey];
-        if (!data) return;
+        if (!data) {
+            isTransitioning = false;
+            return;
+        }
 
-        // Remove active class from all control cards
+        // Highlight the corresponding control card immediately to show active state
         controlCards.forEach(c => c.classList.remove('active'));
-        // Add active class to active card
         if (cardElement) cardElement.classList.add('active');
 
-        // Apply tilt rotation to SVG beam and counter-rotation to pans
-        if (beamGroup) beamGroup.style.transform = `rotate(${data.tilt}deg)`;
-        if (panLeftGroup) panLeftGroup.style.transform = `rotate(${-data.tilt}deg)`;
-        if (panRightGroup) panRightGroup.style.transform = `rotate(${-data.tilt}deg)`;
+        // Phase 1: Empty and level the scale (cards float up/fade, scale goes flat, weight vanishes)
+        if (cardLeft) cardLeft.classList.add('empty');
+        if (cardRight) cardRight.classList.add('empty');
+        if (weightLeft) weightLeft.classList.remove('active');
+        if (weightRight) weightRight.classList.remove('active');
+        
+        if (beamGroup) beamGroup.style.transform = 'rotate(0deg)';
+        if (panLeftGroup) panLeftGroup.style.transform = 'rotate(0deg)';
+        if (panRightGroup) panRightGroup.style.transform = 'rotate(0deg)';
 
-        // Update text on left and right pans
-        if (cardLeft) {
-            cardLeft.innerHTML = `<i class="fa-solid ${data.leftIcon} scale-card-icon"></i> <span class="scale-card-text">${data.leftText}</span>`;
-            if (data.heavier === 'left') {
-                cardLeft.classList.add('active', 'cyan-theme');
-            } else {
-                cardLeft.classList.remove('active', 'cyan-theme');
-            }
-        }
-
-        if (cardRight) {
-            cardRight.innerHTML = `<i class="fa-solid ${data.rightIcon} scale-card-icon"></i> <span class="scale-card-text">${data.rightText}</span>`;
-            if (data.heavier === 'right') {
-                cardRight.classList.add('active');
-            } else {
-                cardRight.classList.remove('active');
-            }
-        }
-
-        // Update weight visibility
-        if (weightLeft) {
-            if (data.heavier === 'left') {
-                weightLeft.classList.add('active');
-            } else {
-                weightLeft.classList.remove('active');
-            }
-        }
-
-        if (weightRight) {
-            if (data.heavier === 'right') {
-                weightRight.classList.add('active');
-            } else {
-                weightRight.classList.remove('active');
-            }
-        }
-
-        // Fade and update explanation card
         const expElements = [expTitle, expDesc, expIcon];
         expElements.forEach(el => {
             if (el) el.classList.add('balance-fade-out');
         });
 
+        // Phase 2: Load new terms and drop them onto pans (cards drop down from above)
         setTimeout(() => {
-            if (expTitle) expTitle.textContent = data.expTitle;
-            if (expDesc) expDesc.textContent = data.expDesc;
-            if (expIcon) {
-                if (data.heavier === 'left') {
-                    expIcon.className = `fa-solid ${data.leftIcon}`;
-                    expIcon.style.color = 'var(--accent-cyan)';
-                } else {
-                    expIcon.className = `fa-solid ${data.rightIcon}`;
-                    expIcon.style.color = 'var(--accent-purple)';
-                }
+            // Update terms content
+            if (cardLeft) {
+                cardLeft.innerHTML = `<i class="fa-solid ${data.leftIcon} scale-card-icon"></i> <span class="scale-card-text">${data.leftText}</span>`;
+                cardLeft.classList.remove('active', 'cyan-theme');
+            }
+            if (cardRight) {
+                cardRight.innerHTML = `<i class="fa-solid ${data.rightIcon} scale-card-icon"></i> <span class="scale-card-text">${data.rightText}</span>`;
+                cardRight.classList.remove('active');
             }
 
-            expElements.forEach(el => {
-                if (el) {
-                    el.classList.remove('balance-fade-out');
-                    el.classList.add('balance-fade-in');
-                    setTimeout(() => el.classList.remove('balance-fade-in'), 400);
+            // Animate landing drop
+            if (cardLeft) cardLeft.classList.remove('empty');
+            if (cardRight) cardRight.classList.remove('empty');
+
+            // Phase 3: Tip the scale and drop the active weight
+            setTimeout(() => {
+                // Apply tilt rotation
+                if (beamGroup) beamGroup.style.transform = `rotate(${data.tilt}deg)`;
+                if (panLeftGroup) panLeftGroup.style.transform = `rotate(${-data.tilt}deg)`;
+                if (panRightGroup) panRightGroup.style.transform = `rotate(${-data.tilt}deg)`;
+
+                // Active weight drop and card glow highlight
+                if (data.heavier === 'left') {
+                    if (weightLeft) weightLeft.classList.add('active');
+                    if (cardLeft) cardLeft.classList.add('active', 'cyan-theme');
+                } else {
+                    if (weightRight) weightRight.classList.add('active');
+                    if (cardRight) cardRight.classList.add('active');
                 }
-            });
-        }, 250);
+
+                // Update commentary
+                if (expTitle) expTitle.textContent = data.expTitle;
+                if (expDesc) expDesc.textContent = data.expDesc;
+                if (expIcon) {
+                    if (data.heavier === 'left') {
+                        expIcon.className = `fa-solid ${data.leftIcon}`;
+                        expIcon.style.color = 'var(--accent-cyan)';
+                    } else {
+                        expIcon.className = `fa-solid ${data.rightIcon}`;
+                        expIcon.style.color = 'var(--accent-purple)';
+                    }
+                }
+
+                // Fade explanation back in
+                expElements.forEach(el => {
+                    if (el) {
+                        el.classList.remove('balance-fade-out');
+                        el.classList.add('balance-fade-in');
+                        setTimeout(() => el.classList.remove('balance-fade-in'), 400);
+                    }
+                });
+
+                isTransitioning = false;
+            }, 600); // Wait for cards to finish dropping before scale tilts
+
+        }, 700); // Wait for scale to level and old cards to fade before showing new ones
     }
 
     function startBalanceAutoplay() {
         if (balanceAutoplayInterval) return;
+
+        // Run the first tradeoff cycle on initialization
+        const firstKey = balancePairsKeys[currentBalanceIndex];
+        const firstCard = document.querySelector(`.control-card[data-pair="${firstKey}"]`);
+        runWeighingCycle(firstKey, firstCard);
+
         balanceAutoplayInterval = setInterval(() => {
             currentBalanceIndex = (currentBalanceIndex + 1) % balancePairsKeys.length;
             const nextKey = balancePairsKeys[currentBalanceIndex];
             const nextCard = document.querySelector(`.control-card[data-pair="${nextKey}"]`);
-            updateActiveBalance(nextKey, nextCard);
-        }, 6000); // Change tradeoff every 6 seconds
+            runWeighingCycle(nextKey, nextCard);
+        }, 7500); // 7.5 seconds complete cycle duration
     }
 
     function stopBalanceAutoplay() {
@@ -987,7 +1004,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stopBalanceAutoplay(); // User interacted, stop automatic cycling
             const pairKey = card.getAttribute('data-pair');
             currentBalanceIndex = balancePairsKeys.indexOf(pairKey);
-            updateActiveBalance(pairKey, card);
+            runWeighingCycle(pairKey, card);
         });
     });
 

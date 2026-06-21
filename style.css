@@ -3126,11 +3126,17 @@ section {
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--text-secondary);
-    transition: var(--transition-smooth);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease, background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     user-select: none;
     box-sizing: border-box;
     padding: 4px;
+    transform-origin: center center;
+}
+
+.scale-card-html.empty {
+    opacity: 0;
+    transform: translateY(-25px) scale(0.85);
 }
 
 .scale-card-icon {
