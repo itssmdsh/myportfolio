@@ -285,66 +285,181 @@
                         <!-- Right Panel: Physical scale display -->
                         <div class="balance-display-container">
                             <div class="balance-visual-box">
-                                <svg class="balance-scale-svg" viewBox="0 0 400 300" width="100%" height="100%">
-                                    <!-- Stand Base -->
-                                    <path class="scale-base" d="M140 280 L260 280 L240 265 L160 265 Z" fill="var(--text-secondary)" opacity="0.25"></path>
+                                <svg class="balance-scale-svg" viewBox="0 0 400 310" width="100%" height="100%">
+                                    <defs>
+                                        <!-- Metallic gradient for plates -->
+                                        <linearGradient id="panGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#C0A060" stop-opacity="0.9"/>
+                                            <stop offset="40%" stop-color="#8B7340" stop-opacity="0.85"/>
+                                            <stop offset="100%" stop-color="#6B5530" stop-opacity="0.8"/>
+                                        </linearGradient>
+                                        <!-- Plate rim highlight -->
+                                        <linearGradient id="panRimGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#D4A854" stop-opacity="0.6"/>
+                                            <stop offset="50%" stop-color="#F0D888" stop-opacity="1"/>
+                                            <stop offset="100%" stop-color="#D4A854" stop-opacity="0.6"/>
+                                        </linearGradient>
+                                        <!-- Pillar metallic gradient -->
+                                        <linearGradient id="pillarGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#4A4A5A" stop-opacity="0.7"/>
+                                            <stop offset="50%" stop-color="#6A6A7A" stop-opacity="0.9"/>
+                                            <stop offset="100%" stop-color="#4A4A5A" stop-opacity="0.7"/>
+                                        </linearGradient>
+                                        <!-- Base metallic gradient -->
+                                        <linearGradient id="baseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#5A5A6A" stop-opacity="0.8"/>
+                                            <stop offset="100%" stop-color="#3A3A4A" stop-opacity="0.6"/>
+                                        </linearGradient>
+                                        <!-- Chain gradient -->
+                                        <linearGradient id="chainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#8E96A4" stop-opacity="0.5"/>
+                                            <stop offset="100%" stop-color="#C0A060" stop-opacity="0.7"/>
+                                        </linearGradient>
+                                        <!-- Beam metallic gradient -->
+                                        <linearGradient id="beamGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#8E96A4" stop-opacity="0.95"/>
+                                            <stop offset="50%" stop-color="#B0B8C4" stop-opacity="1"/>
+                                            <stop offset="100%" stop-color="#7A8290" stop-opacity="0.9"/>
+                                        </linearGradient>
+                                        <!-- Hub glow filter -->
+                                        <filter id="hubGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                                            <feMerge>
+                                                <feMergeNode in="blur"/>
+                                                <feMergeNode in="SourceGraphic"/>
+                                            </feMerge>
+                                        </filter>
+                                        <!-- Pan plate shadow -->
+                                        <filter id="panShadow" x="-20%" y="-10%" width="140%" height="150%">
+                                            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/>
+                                        </filter>
+                                        <!-- Weight glow -->
+                                        <filter id="weightGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                            <feGaussianBlur stdDeviation="2" result="blur"/>
+                                            <feMerge>
+                                                <feMergeNode in="blur"/>
+                                                <feMergeNode in="SourceGraphic"/>
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+
+                                    <!-- Stand Base — layered pedestal -->
+                                    <path class="scale-base-bottom" d="M120 298 L280 298 L270 290 L130 290 Z" fill="url(#baseGradient)" opacity="0.7"></path>
+                                    <path class="scale-base" d="M140 290 L260 290 L248 278 L152 278 Z" fill="url(#baseGradient)" opacity="0.85"></path>
+                                    <rect class="scale-base-top" x="155" y="274" width="90" height="4" rx="2" fill="url(#pillarGradient)" opacity="0.6"></rect>
+
                                     <!-- Pillar -->
-                                    <rect class="scale-pillar" x="194" y="80" width="12" height="185" rx="4" fill="var(--card-border)"></rect>
-                                    <!-- Joint / Center Hub -->
-                                    <circle class="scale-hub" cx="200" cy="80" r="10" fill="var(--accent-purple)"></circle>
-                                    <circle class="scale-center-pin" cx="200" cy="80" r="4" fill="var(--bg-primary)"></circle>
+                                    <rect class="scale-pillar" x="194" y="80" width="12" height="194" rx="4" fill="url(#pillarGradient)"></rect>
+                                    <!-- Pillar center line detail -->
+                                    <line x1="200" y1="90" x2="200" y2="270" stroke="rgba(255,255,255,0.06)" stroke-width="1"></line>
+                                    <!-- Pillar decorative rings -->
+                                    <rect x="192" y="100" width="16" height="3" rx="1.5" fill="rgba(255,255,255,0.08)"></rect>
+                                    <rect x="192" y="255" width="16" height="3" rx="1.5" fill="rgba(255,255,255,0.08)"></rect>
+
+                                    <!-- Joint / Center Hub — with glow -->
+                                    <circle class="scale-hub-glow" cx="200" cy="80" r="16" fill="var(--accent-purple)" opacity="0.15" filter="url(#hubGlow)"></circle>
+                                    <circle class="scale-hub" cx="200" cy="80" r="12" fill="var(--accent-purple)"></circle>
+                                    <circle class="scale-hub-ring" cx="200" cy="80" r="12" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"></circle>
+                                    <circle class="scale-center-pin" cx="200" cy="80" r="4.5" fill="var(--bg-primary)"></circle>
+                                    <circle cx="200" cy="80" r="2" fill="var(--accent-purple)" opacity="0.7"></circle>
                                     
                                     <!-- Rotating Group (Beam and Needle) -->
                                     <g class="scale-beam-group" style="transform-origin: 200px 80px; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);">
-                                        <!-- Main Beam -->
-                                        <rect class="scale-beam" x="40" y="77" width="320" height="6" rx="3" fill="var(--text-primary)"></rect>
-                                        <!-- Balance Needle -->
-                                        <polygon class="scale-needle" points="200,80 198,35 202,35" fill="var(--accent-purple)"></polygon>
+                                        <!-- Main Beam — thicker with metallic look -->
+                                        <rect class="scale-beam" x="35" y="75" width="330" height="10" rx="5" fill="url(#beamGradient)"></rect>
+                                        <!-- Beam edge highlight -->
+                                        <rect x="35" y="75" width="330" height="2" rx="1" fill="rgba(255,255,255,0.1)"></rect>
+                                        <!-- Beam decorative notches -->
+                                        <circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"></circle>
+                                        <circle cx="120" cy="80" r="2" fill="rgba(255,255,255,0.1)"></circle>
+                                        <circle cx="160" cy="80" r="2" fill="rgba(255,255,255,0.1)"></circle>
+                                        <circle cx="240" cy="80" r="2" fill="rgba(255,255,255,0.1)"></circle>
+                                        <circle cx="280" cy="80" r="2" fill="rgba(255,255,255,0.1)"></circle>
+                                        <circle cx="320" cy="80" r="2" fill="rgba(255,255,255,0.1)"></circle>
+
+                                        <!-- Balance Needle — taller, more prominent -->
+                                        <polygon class="scale-needle" points="200,80 196,28 204,28" fill="var(--accent-purple)"></polygon>
+                                        <polygon points="200,80 198,34 202,34" fill="rgba(255,255,255,0.15)"></polygon>
+                                        <!-- Needle tip ornament -->
+                                        <circle cx="200" cy="26" r="3" fill="var(--accent-purple)"></circle>
+                                        <circle cx="200" cy="26" r="1.5" fill="rgba(255,255,255,0.3)"></circle>
                                         
-                                        <!-- Left Hanger Point -->
-                                        <circle cx="50" cy="80" r="4" fill="var(--text-secondary)"></circle>
+                                        <!-- Left Hanger Point — larger ring -->
+                                        <circle cx="50" cy="80" r="6" fill="var(--text-secondary)" opacity="0.7"></circle>
+                                        <circle cx="50" cy="80" r="3" fill="var(--bg-primary)" opacity="0.5"></circle>
                                         <!-- Right Hanger Point -->
-                                        <circle cx="350" cy="80" r="4" fill="var(--text-secondary)"></circle>
+                                        <circle cx="350" cy="80" r="6" fill="var(--text-secondary)" opacity="0.7"></circle>
+                                        <circle cx="350" cy="80" r="3" fill="var(--bg-primary)" opacity="0.5"></circle>
                                         
                                         <!-- Hanging Pan Left Group -->
                                         <g class="scale-pan-left-group" style="transform-origin: 50px 80px; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);">
-                                            <!-- Chains -->
-                                            <line x1="50" y1="80" x2="15" y2="180" stroke="var(--text-secondary)" stroke-width="1.5" opacity="0.6"></line>
-                                            <line x1="50" y1="80" x2="85" y2="180" stroke="var(--text-secondary)" stroke-width="1.5" opacity="0.6"></line>
-                                            <!-- Pan Plate -->
-                                            <path class="scale-pan" d="M5 180 L95 180 C90 195, 10 195, 5 180 Z" fill="var(--card-bg)" stroke="var(--card-border)" stroke-width="1.5"></path>
+                                            <!-- Chains — 3-link style each side -->
+                                            <line x1="50" y1="84" x2="12" y2="190" stroke="url(#chainGradient)" stroke-width="2.5" stroke-linecap="round"></line>
+                                            <line x1="50" y1="84" x2="88" y2="190" stroke="url(#chainGradient)" stroke-width="2.5" stroke-linecap="round"></line>
+                                            <!-- Center chain -->
+                                            <line x1="50" y1="84" x2="50" y2="188" stroke="url(#chainGradient)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 6"></line>
+
+                                            <!-- Pan Plate — highly visible with depth -->
+                                            <g filter="url(#panShadow)">
+                                                <!-- Plate body (deeper bowl shape) -->
+                                                <path class="scale-pan" d="M0 190 L100 190 C95 212, 5 212, 0 190 Z" fill="url(#panGradient)"></path>
+                                                <!-- Plate rim highlight -->
+                                                <path d="M0 190 L100 190" stroke="url(#panRimGradient)" stroke-width="2.5" stroke-linecap="round"></path>
+                                                <!-- Inner plate shine -->
+                                                <path d="M15 193 L85 193 C82 204, 18 204, 15 193 Z" fill="rgba(255,255,255,0.08)"></path>
+                                                <!-- Rim edge dots -->
+                                                <circle cx="10" cy="190" r="2" fill="#D4A854" opacity="0.6"></circle>
+                                                <circle cx="50" cy="190" r="2" fill="#F0D888" opacity="0.4"></circle>
+                                                <circle cx="90" cy="190" r="2" fill="#D4A854" opacity="0.6"></circle>
+                                            </g>
+
                                             <!-- HTML Card content -->
-                                            <foreignObject x="0" y="132" width="100" height="38">
+                                            <foreignObject x="0" y="138" width="100" height="42">
                                                 <div class="scale-card-html" id="scale-card-left">
                                                     <i class="fa-solid fa-tornado scale-card-icon"></i>
                                                     <span class="scale-card-text">Chaos</span>
                                                 </div>
                                             </foreignObject>
                                             <!-- Brass Weight -->
-                                            <g class="scale-weight" id="scale-weight-left" style="transform-origin: 50px 180px; transition: var(--transition-smooth);">
-                                                <path d="M42 180 L58 180 L55 168 L45 168 Z" fill="var(--gold)"></path>
-                                                <circle cx="50" cy="164" r="3" fill="none" stroke="var(--gold)" stroke-width="1.5"></circle>
+                                            <g class="scale-weight" id="scale-weight-left" style="transform-origin: 50px 190px; transition: var(--transition-smooth);" filter="url(#weightGlow)">
+                                                <path d="M38 190 L62 190 L58 174 L42 174 Z" fill="var(--gold)"></path>
+                                                <path d="M40 190 L60 190 L57 176 L43 176 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"></path>
+                                                <circle cx="50" cy="170" r="4" fill="none" stroke="var(--gold)" stroke-width="2"></circle>
+                                                <circle cx="50" cy="170" r="1.5" fill="var(--gold)" opacity="0.6"></circle>
                                             </g>
                                         </g>
 
                                         <!-- Hanging Pan Right Group -->
                                         <g class="scale-pan-right-group" style="transform-origin: 350px 80px; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);">
                                             <!-- Chains -->
-                                            <line x1="350" y1="80" x2="315" y2="180" stroke="var(--text-secondary)" stroke-width="1.5" opacity="0.6"></line>
-                                            <line x1="350" y1="80" x2="385" y2="180" stroke="var(--text-secondary)" stroke-width="1.5" opacity="0.6"></line>
-                                            <!-- Pan Plate -->
-                                            <path class="scale-pan" d="M305 180 L395 180 C390 195, 310 195, 305 180 Z" fill="var(--card-bg)" stroke="var(--card-border)" stroke-width="1.5"></path>
+                                            <line x1="350" y1="84" x2="312" y2="190" stroke="url(#chainGradient)" stroke-width="2.5" stroke-linecap="round"></line>
+                                            <line x1="350" y1="84" x2="388" y2="190" stroke="url(#chainGradient)" stroke-width="2.5" stroke-linecap="round"></line>
+                                            <!-- Center chain -->
+                                            <line x1="350" y1="84" x2="350" y2="188" stroke="url(#chainGradient)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 6"></line>
+
+                                            <!-- Pan Plate — highly visible with depth -->
+                                            <g filter="url(#panShadow)">
+                                                <path class="scale-pan" d="M300 190 L400 190 C395 212, 305 212, 300 190 Z" fill="url(#panGradient)"></path>
+                                                <path d="M300 190 L400 190" stroke="url(#panRimGradient)" stroke-width="2.5" stroke-linecap="round"></path>
+                                                <path d="M315 193 L385 193 C382 204, 318 204, 315 193 Z" fill="rgba(255,255,255,0.08)"></path>
+                                                <circle cx="310" cy="190" r="2" fill="#D4A854" opacity="0.6"></circle>
+                                                <circle cx="350" cy="190" r="2" fill="#F0D888" opacity="0.4"></circle>
+                                                <circle cx="390" cy="190" r="2" fill="#D4A854" opacity="0.6"></circle>
+                                            </g>
+
                                             <!-- HTML Card content -->
-                                            <foreignObject x="300" y="132" width="100" height="38">
+                                            <foreignObject x="300" y="138" width="100" height="42">
                                                 <div class="scale-card-html active" id="scale-card-right">
                                                     <i class="fa-solid fa-anchor scale-card-icon"></i>
                                                     <span class="scale-card-text">Stability</span>
                                                 </div>
                                             </foreignObject>
                                             <!-- Brass Weight -->
-                                            <g class="scale-weight active" id="scale-weight-right" style="transform-origin: 350px 180px; transition: var(--transition-smooth);">
-                                                <path d="M342 180 L358 180 L355 168 L345 168 Z" fill="var(--gold)"></path>
-                                                <circle cx="350" cy="164" r="3" fill="none" stroke="var(--gold)" stroke-width="1.5"></circle>
+                                            <g class="scale-weight active" id="scale-weight-right" style="transform-origin: 350px 190px; transition: var(--transition-smooth);" filter="url(#weightGlow)">
+                                                <path d="M338 190 L362 190 L358 174 L342 174 Z" fill="var(--gold)"></path>
+                                                <path d="M340 190 L360 190 L357 176 L343 176 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"></path>
+                                                <circle cx="350" cy="170" r="4" fill="none" stroke="var(--gold)" stroke-width="2"></circle>
+                                                <circle cx="350" cy="170" r="1.5" fill="var(--gold)" opacity="0.6"></circle>
                                             </g>
                                         </g>
                                     </g>
